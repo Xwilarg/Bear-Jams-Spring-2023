@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Rng="*res://scripts/rng.gd"
+Bgm="*res://scenes/game/bgm.tscn"
 
 [display]
 

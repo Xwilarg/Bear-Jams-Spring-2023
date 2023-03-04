@@ -50,6 +50,8 @@ func _physics_process(delta):
 	# add thrust
 	var y_direction = Input.get_axis("move_up", "move_down")
 	if y_direction:
+		if (y_direction < 0 && velocity.y > 0) || (y_direction > 0 && velocity.y < 0):
+			y_direction *= 2
 		velocity.y += y_direction * thrust * delta
 		
 	else:
