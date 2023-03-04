@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj56epdmxrk21"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scripts/NextNode.gd" id="1_tov7m"]
+[ext_resource type="Script" path="res://scripts/next_node.gd" id="1_tov7m"]
 
 [node name="AIMovNode1" type="Node2D"]
 position = Vector2(419, -190)
