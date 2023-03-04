@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjluyjxh1b0ab"]
+[gd_scene load_steps=15 format=3 uid="uid://bjluyjxh1b0ab"]
 
 [ext_resource type="Texture2D" uid="uid://bdom24jr43n8r" path="res://assets/textures/backgrounds/start_layer4.PNG" id="1_8r62y"]
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_p0x54"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cidksqjdwaegs" path="res://assets/textures/backgrounds/start_layer1.PNG" id="4_5ewgy"]
 [ext_resource type="Shader" path="res://scenes/game/_shared/scroll_texture.gdshader" id="5_yb2u6"]
 [ext_resource type="Texture2D" uid="uid://dydrsko602upq" path="res://assets/textures/ui/play.PNG" id="7_web8m"]
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_2h83x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_melku"]
 shader = ExtResource("5_yb2u6")
@@ -79,5 +80,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_62t62")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m10k7")
 icon = ExtResource("7_web8m")
 flat = true
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 62.43
+offset_top = 179.423
+offset_right = 521.43
+offset_bottom = 314.423
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_2h83x")
+theme_override_font_sizes/font_size = 100
+text = "KEY_PLAY"
+horizontal_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

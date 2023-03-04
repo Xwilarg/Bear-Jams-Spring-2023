@@ -58,7 +58,7 @@ move_left={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Translations/text.en.translation")
+locale/translations=PackedStringArray("res://translations/text.en.translation", "res://translations/text.fr.translation")
 
 [physics]
 
