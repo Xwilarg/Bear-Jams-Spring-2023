@@ -10,6 +10,7 @@ const MAX_VELOCITY = 200.0
 var thrust = 100.0
 
 @onready var sprite = %Sprite2D
+var x_direction
 
 
 func _ready():
@@ -17,10 +18,12 @@ func _ready():
 
 
 func _process(_delta):
-	# animation
-	if sprite.flip_h and velocity.x > 0:
+	if x_direction == null:
+		return
+
+	if sprite.flip_h and x_direction > 0:
 		sprite.flip_h = false
-	elif (not sprite.flip_h) and velocity.x < 0:
+	elif (not sprite.flip_h) and x_direction < 0:
 		sprite.flip_h = true
 
 
@@ -37,7 +40,7 @@ func _physics_process(delta):
 	else:
 		velocity.y = move_toward(velocity.y, 0, DRAG * delta)
 	
-	var x_direction = Input.get_axis("move_left", "move_right")
+	x_direction = Input.get_axis("move_left", "move_right")
 	if x_direction:
 		velocity.x += x_direction * thrust * delta
 		
