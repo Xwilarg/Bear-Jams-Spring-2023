@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bj56epdmxrk21" path="res://Scenes/game/AI/AIMovNode.tscn" id="1_uyb3k"]
-[ext_resource type="PackedScene" uid="uid://diqox4mbam1tk" path="res://Scenes/game/AI/Fish.tscn" id="2_xrqsq"]
+[ext_resource type="PackedScene" uid="uid://bj56epdmxrk21" path="res://scenes/game/AI/AIMovNode.tscn" id="1_uyb3k"]
+[ext_resource type="PackedScene" uid="uid://diqox4mbam1tk" path="res://scenes/game/AI/Fish.tscn" id="2_xrqsq"]
 [ext_resource type="Script" path="res://scripts/next_node.gd" id="3_a5hib"]
 
 [node name="FishControlTest" type="Node2D"]
