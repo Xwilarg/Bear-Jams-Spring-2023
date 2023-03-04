@@ -10,7 +10,7 @@ void fragment() {
 	// Place fragment code here.
 	float transp = 0.0;
 	
-	float val = distance(vec2(UV.x, UV.y * ar), vec2(position.x, position.y * ar));
+	float val = distance(vec2(UV.x, UV.y * ar), vec2(position.x, position.y * ar)) / 2.0;
 	
 	if(val < dis1){
 		transp = 0.0;
