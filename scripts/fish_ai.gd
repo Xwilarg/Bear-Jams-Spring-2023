@@ -14,12 +14,14 @@ var sr: Sprite2D
 var can_move: bool = true
 var last_player_pos: Vector2
 var is_chasing = false
+var is_flee = false
 
 func _process(_delta):
 	for ray in rays:
 		var c = (ray as RayCast2D).get_collider()
 		if c != null and c.name == "Player":
 			is_chasing = true
+			is_flee = true
 			last_player_pos = c.position
 			return
 
@@ -50,8 +52,12 @@ func _integrate_forces(state):
 	var target: Vector2
 	var currSpeed = Speed
 	if is_chasing:
-		target = last_player_pos
-		currSpeed *= 1.3
+		if is_flee:
+			target = -last_player_pos
+			currSpeed *= 1.3
+		else: 
+			target = last_player_pos
+			currSpeed *= 1.3
 	else:
 		target = next.position
 
