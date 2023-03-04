@@ -66,6 +66,7 @@ texture = ExtResource("4_5ewgy")
 centered = false
 
 [node name="Button" type="Button" parent="."]
+texture_filter = 6
 layout_mode = 0
 offset_left = 311.0
 offset_top = 350.0
