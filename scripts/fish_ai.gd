@@ -51,7 +51,7 @@ func _integrate_forces(state):
 	var currSpeed = Speed
 	if is_chasing:
 		target = last_player_pos
-		currSpeed *= 1.1
+		currSpeed *= 1.3
 	else:
 		target = next.position
 
