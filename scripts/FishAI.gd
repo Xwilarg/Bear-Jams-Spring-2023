@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-@export var NodeContainer: Node2D
 @export var Speed: float
 @export var MinDistance: int
 
@@ -13,7 +12,7 @@ func distanceComparaison(a: Node2D, b: Node2D):
 func _ready():
 	sr = $"./Sprite2D"
 
-	var targetNodes = NodeContainer.get_children()
+	var targetNodes = get_tree().get_current_scene().get_node("AINodes").get_children()
 	targetNodes.sort_custom(distanceComparaison)
 	next = targetNodes[0]
 

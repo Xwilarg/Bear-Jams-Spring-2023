@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://diqox4mbam1tk"]
+
+[ext_resource type="Script" path="res://scripts/FishAI.gd" id="1_ya3op"]
+[ext_resource type="Texture2D" uid="uid://wj1rjldj5vi0" path="res://assets/textures/sprites/Fish.png" id="2_dsjwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prehy"]
+size = Vector2(511, 289)
+
+[node name="Fish" type="RigidBody2D" node_paths=PackedStringArray("NodeContainer")]
+gravity_scale = 0.0
+script = ExtResource("1_ya3op")
+NodeContainer = NodePath("../AINodes")
+Speed = 100.0
+MinDistance = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_prehy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dsjwk")

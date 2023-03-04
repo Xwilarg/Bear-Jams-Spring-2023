@@ -11,7 +11,7 @@ func indexToNode(i):
 
 # Return a random next node
 func getRandomNext():
-	return indexToNode((get_tree().root.get_child(0).get_node("RNG") as RNG).random(Next.size()))
+	return indexToNode((get_tree().root.get_node("Rng") as RNG).random(Next.size()))
 
 func _ready():
 	# For each next node, we add ourself to it
