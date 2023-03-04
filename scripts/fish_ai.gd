@@ -20,25 +20,40 @@ func _process(_delta):
 		if c != null and c.name == "Player":
 			is_chasing = true
 			last_player_pos = c.position
-			break
+			return
 
-func distanceComparaison(a: Node2D, b: Node2D):
-	return position.distance_to(a.position) < position.distance_to(b.position)
+	if is_chasing:
+		is_chasing = false
+		get_closest_node(last_player_pos)
+
+func get_closest_node(pos: Vector2):
+	var filter := func distanceComparaison(a: Node2D, b: Node2D):
+		return pos.distance_to(a.position) < pos.distance_to(b.position)
+	
+	var targetNodes = get_tree().get_current_scene().get_node("AINodes").get_children()
+	targetNodes.sort_custom(filter)
+	next = targetNodes[0]
 
 func _ready():
 	sr = $"./Sprite2D"
 	lastNode = null
 
-	var targetNodes = get_tree().get_current_scene().get_node("AINodes").get_children()
-	targetNodes.sort_custom(distanceComparaison)
-	next = targetNodes[0]
+	get_closest_node(position)
 
 func _integrate_forces(state):
 	if !can_move:
 		return
-	
-	linear_velocity = (next.position - position).normalized() * Speed
-	if position.distance_to(next.position) < MinDistance:
+
+	var target: Vector2
+	var currSpeed = Speed
+	if is_chasing:
+		target = last_player_pos
+		currSpeed *= 1.1
+	else:
+		target = next.position
+
+	linear_velocity = (target - position).normalized() * currSpeed
+	if !is_chasing && position.distance_to(next.position) < MinDistance:
 		var tmp = lastNode
 		lastNode = next
 		next = next.getRandomNext(tmp)
