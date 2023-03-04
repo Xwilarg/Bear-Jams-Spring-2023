@@ -38,37 +38,42 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_p0x54")
 
-[node name="Layer4" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Layer4" type="TextureRect" parent="CanvasLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_melku")
+offset_right = 3200.0
+offset_bottom = 2400.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_8r62y")
-centered = false
 
-[node name="Layer3" type="Sprite2D" parent="."]
+[node name="Layer3" type="TextureRect" parent="CanvasLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_qa5v1")
+offset_right = 3200.0
+offset_bottom = 2400.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_1cur5")
-centered = false
 
-[node name="Layer2" type="Sprite2D" parent="."]
+[node name="Layer2" type="TextureRect" parent="CanvasLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_l1ywk")
+offset_right = 3200.0
+offset_bottom = 2400.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_8ml8s")
-centered = false
 
-[node name="Layer1" type="Sprite2D" parent="."]
+[node name="Layer1" type="TextureRect" parent="CanvasLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_opa2b")
+offset_right = 3200.0
+offset_bottom = 2400.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_5ewgy")
-centered = false
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="CanvasLayer"]
 texture_filter = 6
-layout_mode = 0
 offset_left = 311.0
 offset_top = 350.0
 offset_right = 831.0
@@ -81,7 +86,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_m10k7")
 icon = ExtResource("7_web8m")
 flat = true
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
 layout_mode = 0
 offset_left = 62.43
 offset_top = 179.423
@@ -94,4 +99,4 @@ text = "KEY_PLAY"
 horizontal_alignment = 1
 uppercase = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
