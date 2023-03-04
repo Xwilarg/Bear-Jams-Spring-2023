@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var MinDistance: int
 
 var next: NextNode
+var lastNode: NextNode
 var sr: Sprite2D
 
 func distanceComparaison(a: Node2D, b: Node2D):
@@ -11,6 +12,7 @@ func distanceComparaison(a: Node2D, b: Node2D):
 
 func _ready():
 	sr = $"./Sprite2D"
+	lastNode = null
 
 	var targetNodes = get_tree().get_current_scene().get_node("AINodes").get_children()
 	targetNodes.sort_custom(distanceComparaison)
@@ -19,5 +21,7 @@ func _ready():
 func _integrate_forces(state):
 	linear_velocity = (next.position - position).normalized() * Speed
 	if position.distance_to(next.position) < MinDistance:
-		next = next.getRandomNext(next)
+		var tmp = lastNode
+		lastNode = next
+		next = next.getRandomNext(tmp)
 	sr.flip_h = linear_velocity.x < 0

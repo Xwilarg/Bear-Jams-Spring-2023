@@ -11,14 +11,15 @@ func indexToNode(i):
 
 # Return a random next node
 func getRandomNext(exclude: NextNode):
-	var excludeName = exclude.name.right(name.length() - 9)
+	var excludeName = ""
+	if exclude != null:
+		excludeName = exclude.name.right(name.length() - 9)
 	
 	if Next.size() == 1:
 		return indexToNode(0)
 	
 	var indexArray = []
 	for i in range(0, Next.size()):
-		print("compare " + Next[i] + " and " + excludeName)
 		if Next[i] != excludeName:
 			indexArray.push_back(i)
 	return indexToNode(indexArray[(get_tree().root.get_node("Rng") as RNG).random(indexArray.size())])
