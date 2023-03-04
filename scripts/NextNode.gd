@@ -24,4 +24,4 @@ func _ready():
 
 func _draw():
 	for i in range(0, Next.size()):
-		draw_line(position, indexToNode(i).position, Color.GREEN, 3.0)
+		draw_line(to_local(position), to_local(indexToNode(i).position), Color.GREEN, 3.0)

@@ -8,7 +8,10 @@ const DRAG = 10.0
 const MAX_VELOCITY = 200.0
 
 var thrust = 100.0
+var sr: Sprite2D
 
+func _ready():
+	sr = $"./Sprite2D"
 
 func _physics_process(delta):
 	# add gravity
@@ -34,3 +37,5 @@ func _physics_process(delta):
 	velocity = velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
 	
 	move_and_slide()
+	
+	sr.flip_h = velocity.x < 0
