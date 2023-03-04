@@ -25,8 +25,24 @@ texture = ExtResource("2_dsjwk")
 target_position = Vector2(200, -45)
 collision_mask = 4
 
+[node name="RayTop2" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -67.5)
+collision_mask = 4
+
+[node name="RayTop3" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -90)
+collision_mask = 4
+
 [node name="RayBottom" type="RayCast2D" parent="Rays"]
 target_position = Vector2(200, 45)
+collision_mask = 4
+
+[node name="RayBottom2" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 67.5)
+collision_mask = 4
+
+[node name="RayBottom3" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 90)
 collision_mask = 4
 
 [node name="RayUp" type="RayCast2D" parent="Rays"]
