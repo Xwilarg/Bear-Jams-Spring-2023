@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const GRAVITY = 50.0
 const DRAG = 10.0
-const MAX_VELOCITY = 200.0
+const MAX_VELOCITY = 150.0
 
 var thrust = 100.0
 
@@ -59,6 +59,8 @@ func _physics_process(delta):
 	
 	x_direction = Input.get_axis("move_left", "move_right")
 	if x_direction:
+		if (x_direction < 0 && velocity.x > 0) || (x_direction > 0 && velocity.x < 0):
+			x_direction *= 2
 		velocity.x += x_direction * thrust * delta
 		
 	else:
