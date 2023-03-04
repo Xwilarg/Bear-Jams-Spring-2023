@@ -1,3 +1,4 @@
+@tool
 extends RigidBody2D
 
 class_name Fish
@@ -41,6 +42,8 @@ func _ready():
 	get_closest_node(position)
 
 func _integrate_forces(state):
+	queue_redraw()
+
 	if !can_move:
 		return
 
@@ -68,3 +71,7 @@ func get_hit():
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.name == "Player":
 		self.queue_free()
+
+
+func _draw():
+	draw_line(to_local(position), to_local(last_player_pos if is_chasing else next.position), Color.RED, 3.0)
