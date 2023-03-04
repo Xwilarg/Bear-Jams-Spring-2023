@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://db8es0i3qen5j"]
+[gd_scene load_steps=6 format=3 uid="uid://bpsoyffmkmear"]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_lmape"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="3_1cw7a"]
-[ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://Scenes/game/AI/AIMovNode.tscn" id="3_q0x0o"]
+[ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="3_fnece"]
+[ext_resource type="PackedScene" path="res://Scenes/game/AI/AIMovNode.tscn" id="3_q0x0o"]
 
 [node name="Level1" type="TileMap"]
 position = Vector2(-15, 24)
@@ -15,6 +16,7 @@ layer_0/tile_data = PackedInt32Array(0, 1048577, 4, 1, 851969, 0, 2, 851969, 0, 
 z_index = 10
 position = Vector2(944, 483)
 collision_layer = 4
+net = ExtResource("3_fnece")
 
 [node name="AINodes" type="Node2D" parent="."]
 
