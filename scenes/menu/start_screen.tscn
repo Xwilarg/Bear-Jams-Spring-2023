@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjluyjxh1b0ab"]
+
+[ext_resource type="Texture2D" uid="uid://bdom24jr43n8r" path="res://assets/textures/backgrounds/start_layer4.PNG" id="1_8r62y"]
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_p0x54"]
+[ext_resource type="Texture2D" uid="uid://b7x6qdpnswhl8" path="res://assets/textures/backgrounds/start_layer3.PNG" id="2_1cur5"]
+[ext_resource type="Texture2D" uid="uid://b24g66f28flcd" path="res://assets/textures/backgrounds/start_layer2.PNG" id="3_8ml8s"]
+[ext_resource type="Texture2D" uid="uid://cidksqjdwaegs" path="res://assets/textures/backgrounds/start_layer1.PNG" id="4_5ewgy"]
+[ext_resource type="Shader" path="res://scenes/game/_shared/scroll_texture.gdshader" id="5_yb2u6"]
+[ext_resource type="Texture2D" uid="uid://cxbwr0cuvdjnb" path="res://assets/textures/sprites/submarine.png" id="7_l0igq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_melku"]
+shader = ExtResource("5_yb2u6")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qa5v1"]
+shader = ExtResource("5_yb2u6")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed = 0.04
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1ywk"]
+shader = ExtResource("5_yb2u6")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed = 0.06
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opa2b"]
+shader = ExtResource("5_yb2u6")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed = 0.08
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p0x54")
+
+[node name="Layer4" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_melku")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_8r62y")
+centered = false
+
+[node name="Layer3" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qa5v1")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_1cur5")
+centered = false
+
+[node name="Layer2" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_l1ywk")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_8ml8s")
+centered = false
+
+[node name="Layer1" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_opa2b")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_5ewgy")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 221.0
+offset_right = 836.0
+offset_bottom = 741.0
+scale = Vector2(0.304341, 0.24523)
+icon = ExtResource("7_l0igq")
+flat = true
