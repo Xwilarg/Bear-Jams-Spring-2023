@@ -35,7 +35,7 @@ position = Vector2(220, 140)
 Next = Array[String](["2"])
 
 [node name="AIMovNode1" parent="AINodes" instance=ExtResource("3_q0x0o")]
-position = Vector2(507, 684)
+position = Vector2(547, 683)
 Next = Array[String](["2", "4"])
 
 [node name="AIMovNode2" parent="AINodes" instance=ExtResource("3_q0x0o")]

@@ -4,12 +4,23 @@ class_name Fish
 
 @export var Speed: float
 @export var MinDistance: int
+@onready var rays = $"Rays".get_children()
 
 var next: NextNode
 var lastNode: NextNode
 var sr: Sprite2D
 
 var can_move: bool = true
+var last_player_pos: Vector2
+var is_chasing = false
+
+func _process(_delta):
+	for ray in rays:
+		var c = (ray as RayCast2D).get_collider()
+		if c != null and c.name == "Player":
+			is_chasing = true
+			last_player_pos = c.position
+			break
 
 func distanceComparaison(a: Node2D, b: Node2D):
 	return position.distance_to(a.position) < position.distance_to(b.position)

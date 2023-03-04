@@ -19,4 +19,26 @@ shape = SubResource("RectangleShape2D_prehy")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_dsjwk")
 
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="RayTop" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -45)
+collision_mask = 4
+
+[node name="RayBottom" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 45)
+collision_mask = 4
+
+[node name="RayUp" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -22.5)
+collision_mask = 4
+
+[node name="RayDown" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 22.5)
+collision_mask = 4
+
+[node name="RayMid" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 1)
+collision_mask = 4
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
