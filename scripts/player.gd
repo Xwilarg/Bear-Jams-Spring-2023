@@ -18,12 +18,10 @@ var x_direction
 var net_reload_timer = 0.0;
 const NET_RELOAD_REF = 2.0;
 
-func _ready():
-	light.material.set_shader_parameter("ar", get_viewport_rect().size.y / get_viewport_rect().size.x)
-
 func _process(delta):
 	net_reload_timer -= delta
 
+	light.material.set_shader_parameter("ar", get_viewport_rect().size.y / get_viewport_rect().size.x)
 	light.material.set_shader_parameter("position", Vector2.ONE / 2)
 
 	if x_direction == null:
