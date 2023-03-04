@@ -1,8 +1,13 @@
+class_name RNG
 extends Node
 
-class_name RNG
 
-var rng = RandomNumberGenerator.new()
+var _rng = RandomNumberGenerator.new()
 
-func random(max: int):
-	return rng.randf_range(0, max)
+
+func _init():
+	_rng.randomize()
+	
+
+func random(max: int) -> float:
+	return _rng.randf_range(0, max)
