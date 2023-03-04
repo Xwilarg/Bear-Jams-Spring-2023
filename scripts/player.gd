@@ -13,9 +13,14 @@ var thrust = 100.0
 var x_direction
 
 @export var net: PackedScene
+@export var light: ColorRect
 
+func _ready():
+	light.material.set_shader_parameter("ar", get_viewport_rect().size.y / get_viewport_rect().size.x)
 
 func _process(_delta):
+	light.material.set_shader_parameter("position", Vector2.ONE / 2)
+	
 	if x_direction == null:
 		return
 
