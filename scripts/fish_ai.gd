@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+class_name Fish
+
 @export var Speed: float
 @export var MinDistance: int
 
@@ -25,3 +27,6 @@ func _integrate_forces(state):
 		lastNode = next
 		next = next.getRandomNext(tmp)
 	sr.flip_h = linear_velocity.x < 0
+
+func get_hit():
+	pass
