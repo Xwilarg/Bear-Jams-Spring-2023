@@ -4,18 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://wj1rjldj5vi0" path="res://assets/textures/sprites/Fish.png" id="2_dsjwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prehy"]
-size = Vector2(511, 289)
+size = Vector2(52, 28)
 
-[node name="Fish" type="RigidBody2D" node_paths=PackedStringArray("NodeContainer")]
+[node name="Fish" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_ya3op")
-NodeContainer = NodePath("../AINodes")
 Speed = 100.0
 MinDistance = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_prehy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_dsjwk")
