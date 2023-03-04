@@ -5,6 +5,12 @@ class_name NextNode
 
 @export var Next: Array[String] # Thanks Godot https://github.com/godotengine/godot/issues/62916
 
+@export var refresh_draw = false : set = set_refresh
+
+func set_refresh(_value):
+	queue_redraw()
+	refresh_draw = false
+
 # Get a node given its index
 func indexToNode(i):
 	return get_parent().get_node("AIMovNode" + Next[i])
