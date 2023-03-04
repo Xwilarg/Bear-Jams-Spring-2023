@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhep23over4e2"]
+
+[ext_resource type="Script" path="res://_debug/debug_hud.gd" id="1_i5bsi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_30ltj"]
+font_size = 12
+
+[node name="DebugHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5bsi")
+
+[node name="above_player" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -51.0
+offset_top = -48.0
+offset_right = 52.0
+offset_bottom = -22.0
+text = "above_player"
+label_settings = SubResource("LabelSettings_30ltj")
+horizontal_alignment = 1
