@@ -51,6 +51,8 @@ Next = Array[String](["1", "3"])
 [node name="Fish" parent="Fishes" instance=ExtResource("3_1cw7a")]
 position = Vector2(619, 681)
 collision_layer = 2
+max_contacts_reported = 5
+contact_monitor = true
 lock_rotation = true
 
 [node name="HUD" type="CanvasLayer" parent="."]

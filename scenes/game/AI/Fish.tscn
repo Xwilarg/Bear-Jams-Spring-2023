@@ -18,3 +18,5 @@ shape = SubResource("RectangleShape2D_prehy")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_dsjwk")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

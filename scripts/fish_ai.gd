@@ -9,6 +9,8 @@ var next: NextNode
 var lastNode: NextNode
 var sr: Sprite2D
 
+var can_move: bool = true
+
 func distanceComparaison(a: Node2D, b: Node2D):
 	return position.distance_to(a.position) < position.distance_to(b.position)
 
@@ -21,6 +23,9 @@ func _ready():
 	next = targetNodes[0]
 
 func _integrate_forces(state):
+	if !can_move:
+		return
+	
 	linear_velocity = (next.position - position).normalized() * Speed
 	if position.distance_to(next.position) < MinDistance:
 		var tmp = lastNode
@@ -29,4 +34,11 @@ func _integrate_forces(state):
 	sr.flip_h = linear_velocity.x < 0
 
 func get_hit():
-	pass
+	can_move = false
+	linear_velocity = Vector2.ZERO
+	gravity_scale = 1.0
+	set_collision_mask_value(3, true)
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.name == "Player":
+		self.queue_free()
