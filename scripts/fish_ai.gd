@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-class_name Fish
-
 @export var Speed: float
 @export var MinDistance: int
 

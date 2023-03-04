@@ -1,5 +1,6 @@
 extends RigidBody2D
 
 func _on_body_entered(body):
-	if body.is_class("Fish"):
-		pass
+	if body.name == "Fish":
+		body.queue_free()
+	self.queue_free()
