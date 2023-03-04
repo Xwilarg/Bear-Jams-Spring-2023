@@ -60,7 +60,6 @@ contact_monitor = true
 lock_rotation = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ShaderRect" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_8ymri")
