@@ -15,12 +15,17 @@ var x_direction
 @export var net: PackedScene
 @export var light: ColorRect
 
+var net_reload_timer = 0.0;
+const NET_RELOAD_REF = 2.0;
+
 func _ready():
 	light.material.set_shader_parameter("ar", get_viewport_rect().size.y / get_viewport_rect().size.x)
 
-func _process(_delta):
+func _process(delta):
+	net_reload_timer -= delta
+
 	light.material.set_shader_parameter("position", Vector2.ONE / 2)
-	
+
 	if x_direction == null:
 		return
 
@@ -29,13 +34,14 @@ func _process(_delta):
 	elif (not sprite.flip_h) and x_direction < 0:
 		sprite.flip_h = true
 
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("fire") and net_reload_timer <= 0.0:
 		var go = net.instantiate()
 		get_parent().add_child(go)
 		go.position = position
 		var x = -1 if sprite.flip_h else 1
 		(go as RigidBody2D).add_constant_central_force(Vector2(3 * x, -1).normalized() * 350)
 		(go.get_node("Sprite2D") as Sprite2D).flip_h = x
+		net_reload_timer = NET_RELOAD_REF
 
 
 func _physics_process(delta):
