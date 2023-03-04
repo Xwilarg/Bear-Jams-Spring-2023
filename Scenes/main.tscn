@@ -1,3 +1,72 @@
-[gd_scene format=3 uid="uid://cl616lb4mkpxn"]
+[gd_scene load_steps=4 format=3 uid="uid://cbq6idg06citv"]
+
+[sub_resource type="Shader" id="Shader_leip2"]
+code = "shader_type canvas_item;
+
+uniform vec2 mouse_position;
+uniform vec4 color : source_color = vec4(0.305, 0.298, 0.341, 1); //dark color
+uniform float dis1 = 0.1;
+uniform float dis2 = 0.15;
+
+uniform float mult = 0.56; //res 16/19 -> mult = 9/16
+
+void fragment() {
+	// Place fragment code here.
+	float transp = 0.0;
+	
+	float val = distance(vec2(UV.x, UV.y * mult), vec2(mouse_position.x, mouse_position.y * mult));
+	
+	if(val < dis1){
+		transp = 0.0;
+	}else if(val < dis2){
+		transp = 0.5;
+	}else{
+		transp = 1.0;
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81pb4"]
+shader = SubResource("Shader_leip2")
+shader_parameter/mouse_position = null
+shader_parameter/color = Color(0.305, 0.298, 0.341, 1)
+shader_parameter/dis1 = 0.1
+shader_parameter/dis2 = 0.15
+shader_parameter/mult = 0.56
+
+[sub_resource type="GDScript" id="GDScript_r3l1j"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var mouse_pos = get_global_mouse_position() + (get_viewport().size / 2);
+	mouse_pos = (mouse_pos / get_viewport().size);
+	get_parent().get_node(\"GameHUD/ShaderRect\").material.set_shader_param(\"mouse_pos\")
+"
 
 [node name="Main" type="Node2D"]
+
+[node name="GameHUD" type="CanvasLayer" parent="."]
+
+[node name="ShaderRect" type="ColorRect" parent="GameHUD"]
+material = SubResource("ShaderMaterial_81pb4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -335.0
+offset_right = -363.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Shader" type="Node2D" parent="."]
+script = SubResource("GDScript_r3l1j")
