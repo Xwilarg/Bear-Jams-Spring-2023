@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqx1m3avuxo4k"]
+[gd_scene load_steps=8 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_6lad6"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_llrij"]
@@ -29,23 +29,46 @@ net = ExtResource("3_b0yje")
 light = NodePath("../HUD/ShaderRect")
 
 [node name="AINodes" type="Node2D" parent="."]
-visible = false
-
-[node name="AIMovNode1" parent="AINodes" instance=ExtResource("4_3ek6l")]
-position = Vector2(507, 684)
-Next = Array[String](["2", "4"])
-
-[node name="AIMovNode2" parent="AINodes" instance=ExtResource("4_3ek6l")]
-position = Vector2(305, 294)
-Next = Array[String](["3", "1"])
-
-[node name="AIMovNode3" parent="AINodes" instance=ExtResource("4_3ek6l")]
-position = Vector2(110, 481)
-Next = Array[String](["4", "2"])
 
 [node name="AIMovNode4" parent="AINodes" instance=ExtResource("4_3ek6l")]
-position = Vector2(220, 688)
-Next = Array[String](["1", "3"])
+position = Vector2(-388, 1056)
+Next = Array[String](["5"])
+
+[node name="AIMovNode5" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(509, 1056)
+Next = Array[String](["6", "4"])
+
+[node name="AIMovNode6" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(675, 604)
+Next = Array[String](["7", "5"])
+
+[node name="AIMovNode7" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(915, 606)
+Next = Array[String](["8", "6"])
+
+[node name="AIMovNode8" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(1002, 1100)
+Next = Array[String](["7", "9", "10"])
+
+[node name="AIMovNode9" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(1419, 940)
+Next = Array[String](["8"])
+
+[node name="AIMovNode10" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(1557, 818)
+Next = Array[String](["9", "12"])
+
+[node name="AIMovNode11" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(1745, 874)
+Next = Array[String](["10", "13"])
+
+[node name="AIMovNode12" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(1741, 1240)
+Next = Array[String](["11"])
+
+[node name="AIMovNode13" parent="AINodes" instance=ExtResource("4_3ek6l")]
+position = Vector2(2411, 1238)
+Next = Array[String](["12"])
 
 [node name="Fishes" type="Node2D" parent="."]
 
@@ -60,7 +83,7 @@ collision_layer = 2
 lock_rotation = true
 
 [node name="Fish3" parent="Fishes" instance=ExtResource("5_2wutn")]
-position = Vector2(2651, 878)
+position = Vector2(1989, 1208)
 collision_layer = 2
 lock_rotation = true
 
