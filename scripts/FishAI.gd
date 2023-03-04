@@ -1,12 +1,20 @@
-extends Node2D
+extends RigidBody2D
 
 @export var NodeContainer: Node2D
+@export var Speed: float
+@export var MinDistance: int
 
-# Called when the node enters the scene tree for the first time.
+var next: NextNode
+
+func distanceComparaison(a: Node2D, b: Node2D):
+	return position.distance_to(a.position) < position.distance_to(b.position)
+
 func _ready():
-	pass # Replace with function body.
+	var targetNodes = NodeContainer.get_children()
+	targetNodes.sort_custom(distanceComparaison)
+	next = targetNodes[0]
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _integrate_forces(state):
+	linear_velocity = (next.position - position).normalized() * Speed
+	if position.distance_to(next.position) < MinDistance:
+		next = next.getRandomNext()

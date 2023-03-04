@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2i63wm77nhjt"]
+[gd_scene load_steps=6 format=3 uid="uid://b2i63wm77nhjt"]
 
 [ext_resource type="Texture2D" uid="uid://wj1rjldj5vi0" path="res://assets/textures/sprites/Fish.png" id="1_pbvr1"]
 [ext_resource type="Script" path="res://scripts/FishAI.gd" id="1_to5gw"]
 [ext_resource type="Script" path="res://scripts/NextNode.gd" id="3_a5hib"]
+[ext_resource type="Script" path="res://scripts/RNG.gd" id="4_1c21e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmebt"]
 size = Vector2(512, 289)
@@ -20,17 +21,22 @@ Next = Array[String](["2"])
 position = Vector2(634, 216)
 script = ExtResource("3_a5hib")
 
+[node name="DebugCamera" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
+
 [node name="Fish" type="RigidBody2D" parent="." node_paths=PackedStringArray("NodeContainer")]
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_to5gw")
 NodeContainer = NodePath("../AINodes")
+Speed = 300.0
+MinDistance = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
-position = Vector2(6, 5.5)
 shape = SubResource("RectangleShape2D_qmebt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Fish/CollisionShape2D"]
 texture = ExtResource("1_pbvr1")
 
-[node name="DebugCamera" type="Camera2D" parent="."]
-zoom = Vector2(0.2, 0.2)
+[node name="RNG" type="Node2D" parent="."]
+script = ExtResource("4_1c21e")
