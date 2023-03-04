@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scenes/game/flashlight/Node2D.gd" id="1_2t1gq"]
-[ext_resource type="Shader" path="res://Scenes/FlashLight.gdshader" id="1_bhd0e"]
+[ext_resource type="Shader" path="res://scenes/FlashLight.gdshader" id="1_bhd0e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3jfst"]
 shader = ExtResource("1_bhd0e")
