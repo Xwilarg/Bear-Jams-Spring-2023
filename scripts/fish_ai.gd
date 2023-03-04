@@ -19,5 +19,5 @@ func _ready():
 func _integrate_forces(state):
 	linear_velocity = (next.position - position).normalized() * Speed
 	if position.distance_to(next.position) < MinDistance:
-		next = next.getRandomNext()
+		next = next.getRandomNext(next)
 	sr.flip_h = linear_velocity.x < 0
