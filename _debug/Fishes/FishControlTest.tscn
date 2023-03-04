@@ -35,7 +35,7 @@ MinDistance = 20
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
 shape = SubResource("RectangleShape2D_qmebt")
 
-[node name="Sprite2D" type="Sprite2D" parent="Fish/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Fish"]
 texture = ExtResource("1_pbvr1")
 
 [node name="RNG" type="Node2D" parent="."]
