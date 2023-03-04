@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjluyjxh1b0ab"]
+[gd_scene load_steps=14 format=3 uid="uid://bjluyjxh1b0ab"]
 
 [ext_resource type="Texture2D" uid="uid://bdom24jr43n8r" path="res://assets/textures/backgrounds/start_layer4.PNG" id="1_8r62y"]
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_p0x54"]
@@ -27,6 +27,10 @@ shader_parameter/speed = 0.06
 shader = ExtResource("5_yb2u6")
 shader_parameter/direction = Vector2(1, 0)
 shader_parameter/speed = 0.08
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62t62"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m10k7"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -68,5 +72,9 @@ offset_top = 350.0
 offset_right = 831.0
 offset_bottom = 870.0
 scale = Vector2(0.304341, 0.24523)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_62t62")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m10k7")
 icon = ExtResource("7_web8m")
 flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
