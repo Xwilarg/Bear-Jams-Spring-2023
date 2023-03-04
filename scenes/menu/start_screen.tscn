@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b24g66f28flcd" path="res://assets/textures/backgrounds/start_layer2.PNG" id="3_8ml8s"]
 [ext_resource type="Texture2D" uid="uid://cidksqjdwaegs" path="res://assets/textures/backgrounds/start_layer1.PNG" id="4_5ewgy"]
 [ext_resource type="Shader" path="res://scenes/game/_shared/scroll_texture.gdshader" id="5_yb2u6"]
-[ext_resource type="Texture2D" uid="uid://cxbwr0cuvdjnb" path="res://assets/textures/sprites/submarine.png" id="7_l0igq"]
+[ext_resource type="Texture2D" uid="uid://dydrsko602upq" path="res://assets/textures/ui/play.PNG" id="7_web8m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_melku"]
 shader = ExtResource("5_yb2u6")
@@ -63,10 +63,10 @@ centered = false
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 221.0
-offset_right = 836.0
-offset_bottom = 741.0
+offset_left = 311.0
+offset_top = 350.0
+offset_right = 831.0
+offset_bottom = 870.0
 scale = Vector2(0.304341, 0.24523)
-icon = ExtResource("7_l0igq")
+icon = ExtResource("7_web8m")
 flat = true
