@@ -30,12 +30,16 @@ light = NodePath("../HUD/ShaderRect")
 
 [node name="AINodes" type="Node2D" parent="."]
 
+[node name="AIMovNode5" parent="AINodes" instance=ExtResource("3_q0x0o")]
+position = Vector2(220, 163)
+Next = Array[String](["2"])
+
 [node name="AIMovNode1" parent="AINodes" instance=ExtResource("3_q0x0o")]
 position = Vector2(507, 684)
 Next = Array[String](["2", "4"])
 
 [node name="AIMovNode2" parent="AINodes" instance=ExtResource("3_q0x0o")]
-position = Vector2(305, 294)
+position = Vector2(305, 372)
 Next = Array[String](["3", "1"])
 
 [node name="AIMovNode3" parent="AINodes" instance=ExtResource("3_q0x0o")]
@@ -56,6 +60,7 @@ contact_monitor = true
 lock_rotation = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ShaderRect" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_8ymri")
