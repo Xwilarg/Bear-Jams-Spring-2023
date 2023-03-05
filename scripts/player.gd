@@ -42,7 +42,7 @@ func _process(delta):
 	net_reload_timer -= delta
 	
 	if Input.is_action_just_pressed("reset"):
-		position = originalPos
+		global_position = originalPos
 		linear_velocity = Vector2.ZERO
 	
 	# pressure = depth?
