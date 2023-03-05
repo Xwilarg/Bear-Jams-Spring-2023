@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkbmu2ssf5imj"]
+[gd_scene load_steps=6 format=3 uid="uid://bkbmu2ssf5imj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fdpge"]
 [ext_resource type="Texture2D" uid="uid://d2nbbmxoo0vkf" path="res://assets/textures/sprites/submarine_animated.PNG" id="2_fqad5"]
@@ -8,9 +8,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i4x3y"]
 friction = 0.0
 bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8wx5"]
-size = Vector2(40, 32)
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("shootAudioPlayer") groups=["player"]]
 collision_mask = 3
@@ -32,11 +29,11 @@ vframes = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_f8wx5")
-
 [node name="Hud" parent="." instance=ExtResource("3_v4mv5")]
 
 [node name="ShootAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_xxu1u")
 volume_db = 15.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, -14, -19, -11, -24, -19, -29, -19, -30, -14, -36, -14, -36, -9, -32, -6, -36, -2, -32, 3, -25, -1, -22, 5, -7, 14, 11, 18, 20, 18, 24, 13, 24, -1, 37, -3, 31, -14, 29, -17, 19, -24, 11, -23, 4, -16)
