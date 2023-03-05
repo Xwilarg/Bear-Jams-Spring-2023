@@ -53,11 +53,18 @@ func get_closest_node(pos: Vector2):
 
 func _ready():
 	normals = [
-		$"./CuttleFish/Normal" as Sprite2D
+		$"./CuttleFish/Normal" as Sprite2D,
+		$"./Isopod/Normal" as Sprite2D,
+		$"./Nautilus/Normal" as Sprite2D,
+		$"./Ray/Normal" as Sprite2D
 	]
 	stunned = [
-		$"./CuttleFish/Stunned" as Sprite2D
+		$"./CuttleFish/Stunned" as Sprite2D,
+		$"./Isopod/Stunned" as Sprite2D,
+		$"./Nautilus/Stunned" as Sprite2D,
+		$"./Ray/Stunned" as Sprite2D
 	]
+	normals[target_index].get_parent().visible = true
 	lastNode = null
 
 	get_closest_node(position)
