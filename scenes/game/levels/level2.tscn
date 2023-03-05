@@ -30,22 +30,22 @@ script = ExtResource("4_i4kde")
 LevelData = Array[String](["A1,A2", "A2,A3", "A3,A4", "A4,A5", "A5,A6", "A6,A1", "A1,A4", "A1,A5", "A1,A3", "A2,A4", "A2,A5", "A2,A6", "A3,A5", "A3,A6", "A4,A6"])
 
 [node name="AIMovNodeA1" parent="AINodes" instance=ExtResource("5_0r0a7")]
-position = Vector2(1238, -411)
+position = Vector2(1447, -439)
 
 [node name="AIMovNodeA2" parent="AINodes" instance=ExtResource("5_0r0a7")]
-position = Vector2(532, -527)
+position = Vector2(473, -538)
 
 [node name="AIMovNodeA3" parent="AINodes" instance=ExtResource("5_0r0a7")]
-position = Vector2(570, 90)
+position = Vector2(624, 237)
 
 [node name="AIMovNodeA4" parent="AINodes" instance=ExtResource("5_0r0a7")]
-position = Vector2(1254, -29)
+position = Vector2(1178, -86)
 
 [node name="AIMovNodeA5" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(886, -617)
 
 [node name="AIMovNodeA6" parent="AINodes" instance=ExtResource("5_0r0a7")]
-position = Vector2(858, -249)
+position = Vector2(711, -207)
 
 [node name="Fishes" type="Node2D" parent="."]
 
