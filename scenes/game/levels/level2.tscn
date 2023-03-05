@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=11 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_i4kde"]
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="5_0r0a7"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="6_it5j6"]
+[ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
+[ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24odd"]
 friction = 0.0
@@ -22,7 +24,7 @@ layer_0/tile_data = PackedInt32Array(1572864, 196609, 2, 1507328, 1, 4, 1441792,
 
 [node name="Player" parent="." instance=ExtResource("2_djwhq")]
 z_index = 10
-position = Vector2(745, 196)
+position = Vector2(1291, 173)
 collision_layer = 4
 inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_24odd")
@@ -47,3 +49,12 @@ position = Vector2(607, -51)
 position = Vector2(595, 281)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_ygwsk")
+
+[node name="KeyBinding" parent="." instance=ExtResource("7_rtwdd")]
+position = Vector2(1255, 176)
+
+[node name="Instructions" parent="." instance=ExtResource("8_iijcu")]
+offset_left = 1166.0
+offset_top = 49.0
+offset_right = 1337.0
+offset_bottom = 124.0
