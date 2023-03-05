@@ -27,7 +27,7 @@ health = 5
 
 [node name="AINodes" type="Node2D" parent="."]
 script = ExtResource("4_i4kde")
-LevelData = Array[String](["4,5", "5,6", "6,4"])
+LevelData = Array[String](["A1,A2", "A2,A3", "A1,A3"])
 
 [node name="AIMovNodeA1" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(802, -230)
