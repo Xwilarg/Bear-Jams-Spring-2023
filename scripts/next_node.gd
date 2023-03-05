@@ -1,15 +1,8 @@
-@tool
 extends Node2D
 
 class_name NextNode
 
 var Next: Array[String]
-
-@export var refresh_draw = false : set = set_refresh
-
-func set_refresh(_value):
-	queue_redraw()
-	refresh_draw = false
 
 # Get a node given its index
 func indexToNode(i):
@@ -33,7 +26,3 @@ func getRandomNext(exclude: NextNode):
 func _ready():
 	var me = name.right(name.length() - 9)
 	Next = (get_parent() as NodeManager).get_my_nodes(me)
-
-func _draw():
-	for i in range(0, Next.size()):
-		draw_line(to_local(position), to_local(indexToNode(i).position), Color.GREEN, 3.0)
