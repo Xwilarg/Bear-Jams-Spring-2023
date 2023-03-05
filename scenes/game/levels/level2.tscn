@@ -121,35 +121,30 @@ rotation = -0.29888
 [node name="FishD1" parent="Fishes/Group D" instance=ExtResource("6_it5j6")]
 position = Vector2(-2884, 2287)
 collision_layer = 2
-MyBehavior = 2
 
 [node name="Group C" type="Node" parent="Fishes"]
 
 [node name="FishC1" parent="Fishes/Group C" instance=ExtResource("6_it5j6")]
 position = Vector2(1749, -21)
 collision_layer = 2
-MyBehavior = 2
 
 [node name="Group B" type="Node" parent="Fishes"]
 
 [node name="FishB1" parent="Fishes/Group B" instance=ExtResource("6_it5j6")]
 position = Vector2(-443, 139)
 collision_layer = 2
-MyBehavior = 2
 
 [node name="Group E" type="Node" parent="Fishes"]
 
 [node name="FishE1" parent="Fishes/Group E" instance=ExtResource("6_it5j6")]
 position = Vector2(693, 999)
 collision_layer = 2
-MyBehavior = 2
 
 [node name="Group A" type="Node" parent="Fishes"]
 
 [node name="FishA1" parent="Fishes/Group A" instance=ExtResource("6_it5j6")]
 position = Vector2(-182, -1055)
 collision_layer = 2
-MyBehavior = 2
 
 [node name="KeyBinding" parent="." instance=ExtResource("7_rtwdd")]
 position = Vector2(848, -480)
@@ -168,6 +163,9 @@ theme_override_fonts/font = ExtResource("8_rbtqu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(750.5, -965)
 shape = SubResource("RectangleShape2D_g24dn")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1340, 2010)
 
 [editable path="Player"]
 [editable path="Player/Hud"]

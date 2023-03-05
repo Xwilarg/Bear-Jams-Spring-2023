@@ -27,6 +27,8 @@ var is_chasing = false
 
 var stun_timer = 0.0
 
+var my_index: int
+
 func _process(delta):
 	if stun_timer > 0.0:
 		stun_timer -= delta
@@ -62,15 +64,17 @@ func _ready():
 		$"./CuttleFish/Normal" as Sprite2D,
 		$"./Isopod/Normal" as Sprite2D,
 		$"./Nautilus/Normal" as Sprite2D,
-		$"./Ray/Normal" as Sprite2D
+		$"./Ray/Normal" as Sprite2D,
+		$"./Anemone/Normal" as Sprite2D
 	]
 	stunned = [
 		$"./CuttleFish/Stunned" as Sprite2D,
 		$"./Isopod/Stunned" as Sprite2D,
 		$"./Nautilus/Stunned" as Sprite2D,
-		$"./Ray/Stunned" as Sprite2D
+		$"./Ray/Stunned" as Sprite2D,
+		$"./Anemone/Stunned" as Sprite2D
 	]
-	normals[FishType].get_parent().visible = true
+	normals[Type].get_parent().visible = true
 	lastNode = null
 
 	get_closest_node(global_position)
@@ -95,7 +99,7 @@ func _integrate_forces(state):
 			var tmp = lastNode
 			lastNode = next
 			next = next.getRandomNext(tmp)
-	normals[FishType].flip_h = linear_velocity.x > 0
+	normals[Type].flip_h = linear_velocity.x > 0
 	var x_scale = 1 if linear_velocity.x > 0 else -1
 	(rayContainer as Node2D).scale = Vector2(x_scale, 1)
 
@@ -104,9 +108,9 @@ func get_hit():
 	linear_velocity = Vector2.ZERO
 	gravity_scale = 1.0
 	set_collision_mask_value(3, true)
-	normals[FishType].visible = false
-	stunned[FishType].visible = true
-	stunned[FishType].flip_h = normals[FishType].flip_h
+	normals[Type].visible = false
+	stunned[Type].visible = true
+	stunned[Type].flip_h = normals[Type].flip_h
 
 func can_collect():
 	return !can_move
