@@ -62,11 +62,11 @@ func _integrate_forces( state ):
 	linear_velocity = linear_velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
 	
 	if(state.get_contact_count() >= 1):
-		if state.get_contact_collider_object(0).name == "Fish":
+		if state.get_contact_collider_object(0).name.begins_with("Fish"):
 			var fish = (state.get_contact_collider_object(0) as Fish)
 			var p = (position - state.get_contact_local_position(0)).normalized() * 1000.0
 			linear_velocity += p
-			fish.propulse(-p / 5)
+			fish.propulse(-p / 20)
 			fish.collect()
 
 	prevVel = linear_velocity
