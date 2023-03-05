@@ -37,11 +37,13 @@ func _ready():
 	originalPos = global_position
 
 func _process(delta):
-
 	if Input.is_action_just_pressed("reset"):
 		global_position = originalPos
 		linear_velocity = Vector2.ZERO
 		broken = false
+		health = 5
+		brokenTexture.visible = false
+		sprite.visible = true
 
 	if broken:
 		return
@@ -132,7 +134,7 @@ func _integrate_forces( state ):
 func take_damage(amount: int):
 	if not %InvincibleTimer.is_stopped():
 		return
-		
+
 	health -= amount
 	%InvincibleTimer.start()
 	if health == 0:
