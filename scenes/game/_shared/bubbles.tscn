@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bppy2eorpl44n"]
+
+[ext_resource type="Texture2D" uid="uid://c0g2o4ynb5dl6" path="res://_debug/bubble_4_grayscale.png" id="1_qafyk"]
+
+[node name="Bubbles" type="CPUParticles2D"]
+amount = 6
+lifetime = 2.0
+speed_scale = 0.5
+randomness = 0.5
+texture = ExtResource("1_qafyk")
+emission_shape = 1
+emission_sphere_radius = 40.24
+gravity = Vector2(0, -480)
+initial_velocity_max = 19.05
