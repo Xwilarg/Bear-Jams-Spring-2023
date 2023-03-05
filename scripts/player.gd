@@ -7,7 +7,6 @@ extends RigidBody2D
 @export var health: int = 3
 var pressure: float
 
-
 const MAX_VELOCITY = 150.0
 const DRAG = 2.0
 
@@ -38,6 +37,8 @@ func _ready():
 	originalPos = global_position
 
 func _process(delta):
+	Bgm.set_y(position.y)
+
 	if Input.is_action_just_pressed("reset"):
 		global_position = originalPos
 		linear_velocity = Vector2.ZERO
