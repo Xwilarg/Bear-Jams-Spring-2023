@@ -1,7 +1,7 @@
 ,en,fr,tr
-KEY_PLAY,Play,Jouer
-KEY_CREDITS,Credits,Credits
-KEY_ART,2D Art,Art 2D
-KEY_GAMEDESIGN,Game Design,Design du jeu
-KEY_SOUNDDESIGN,Sound Design,Sons et musiques
-KEY_PROGRAMMING,Programming,Programmation
+KEY_PLAY,Play,Jouer,
+KEY_CREDITS,Credits,Credits,
+KEY_ART,2D Art,Art 2D,
+KEY_GAMEDESIGN,Game Design,Design du jeu,
+KEY_SOUNDDESIGN,Sound Design,Sons et musiques,
+KEY_PROGRAMMING,Programming,Programmation,
