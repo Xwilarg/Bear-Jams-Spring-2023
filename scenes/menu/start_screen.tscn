@@ -342,6 +342,15 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_2h83x")
 text = "Christian Chaux"
 
+[node name="Label16" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+
+[node name="Label17" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_FONT"
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/EN" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="CanvasLayer/FR" to="." method="_on_fr_pressed"]

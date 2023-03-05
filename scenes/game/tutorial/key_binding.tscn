@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckenuufwf5kqt"]
+
+[ext_resource type="Texture2D" uid="uid://ywwjo0p240j7" path="res://assets/textures/ui/Keys.PNG" id="1_lyu1i"]
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="2_h2gla"]
+
+[node name="KeyBinding" type="Sprite2D"]
+position = Vector2(676, 191)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_lyu1i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -325.0
+offset_top = -135.0
+offset_right = -262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h2gla")
+theme_override_font_sizes/font_size = 80
+text = "W"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -420.0
+offset_top = -20.0001
+offset_right = -357.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h2gla")
+theme_override_font_sizes/font_size = 80
+text = "A"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -300.0
+offset_top = -30.0001
+offset_right = -237.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h2gla")
+theme_override_font_sizes/font_size = 80
+text = "S"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -165.0
+offset_top = -30.0001
+offset_right = -102.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h2gla")
+theme_override_font_sizes/font_size = 80
+text = "D"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -110.0
+offset_top = -140.0
+offset_right = -47.0002
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h2gla")
+theme_override_font_sizes/font_size = 80
+text = "R"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = -25.0002
+offset_top = -40.0
+offset_right = 510.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h2gla")
+theme_override_font_sizes/font_size = 80
+text = "KEY_SPACEBAR"
+horizontal_alignment = 1

@@ -46,9 +46,4 @@ position = Vector2(607, -51)
 [node name="Fish" parent="Fishes" instance=ExtResource("6_it5j6")]
 position = Vector2(595, 281)
 collision_layer = 2
-inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_ygwsk")
-continuous_cd = 1
-max_contacts_reported = 5
-contact_monitor = true
-lock_rotation = true
