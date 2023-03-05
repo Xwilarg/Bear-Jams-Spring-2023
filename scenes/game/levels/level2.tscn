@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=11 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_6lad6"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_llrij"]
@@ -11,6 +11,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24odd"]
 friction = 0.0
 bounce = 1.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygwsk"]
+friction = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ymri"]
 shader = ExtResource("6_7x3sc")
@@ -60,6 +63,10 @@ position = Vector2(-75, -53)
 position = Vector2(595, 281)
 collision_layer = 2
 inertia = 1.0
+physics_material_override = SubResource("PhysicsMaterial_ygwsk")
+continuous_cd = 1
+max_contacts_reported = 5
+contact_monitor = true
 lock_rotation = true
 
 [node name="HUD" type="CanvasLayer" parent="."]

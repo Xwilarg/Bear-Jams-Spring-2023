@@ -17,7 +17,7 @@ var is_chasing = false
 
 var stun_timer = 0.0
 
-func _process(_delta):
+func _process(delta):
 	for ray in rays:
 		var c = (ray as RayCast2D).get_collider()
 		if c != null and c.name == "Player":
@@ -28,6 +28,11 @@ func _process(_delta):
 	if is_chasing:
 		is_chasing = false
 		get_closest_node(last_player_pos)
+
+	if stun_timer > 0.0:
+		stun_timer -= delta
+		if stun_timer <= 0.0:
+			get_closest_node(last_player_pos)
 
 func get_closest_node(pos: Vector2):
 	var filter := func distanceComparaison(a: Node2D, b: Node2D):
@@ -47,9 +52,6 @@ func _integrate_forces(state):
 	queue_redraw()
 
 	if !can_move || stun_timer > 0.0:
-		stun_timer -= 0.0
-		if stun_timer <= 0.0:
-			get_closest_node(last_player_pos)
 		return
 
 	var target: Vector2
@@ -78,9 +80,13 @@ func collect():
 		self.queue_free()
 
 func propulse(dir: Vector2):
-	stun_timer = 1.0
+	stun_timer = 2.0
 	linear_velocity += dir
 
 func _draw():
 	if next != null:
-		draw_line(position, last_player_pos if is_chasing else next.position, Color.RED, 3.0)
+		draw_line(to_local(position), last_player_pos if is_chasing else to_local(next.position), Color.RED, 3.0)
+
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass # Wow yet another Godot bug, can't disconnect this method so it's staying here empty forever
