@@ -59,6 +59,18 @@ func _process(delta):
 	
 	# pressure = depth?
 	pressure = global_position.y * 0.1
+	
+	# animation
+	if Input.is_action_pressed("move_down") \
+			or Input.is_action_pressed("move_left") \
+			or Input.is_action_pressed("move_right") \
+			or Input.is_action_pressed("move_up"):
+		if sprite.frame == 0:
+			sprite.frame = 1
+			
+	else:
+		if sprite.frame == 1:
+			sprite.frame = 0
 
 
 func _integrate_forces( state ):
