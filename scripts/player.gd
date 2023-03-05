@@ -122,6 +122,11 @@ func _integrate_forces( state ):
 
 
 func take_damage(amount: int):
+	if not %InvincibleTimer.is_stopped():
+		return
+		
 	health -= amount
 	if health == 0:
 		broken = true
+	
+	%InvincibleTimer.start()
