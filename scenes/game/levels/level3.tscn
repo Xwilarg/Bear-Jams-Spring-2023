@@ -108,7 +108,6 @@ position = Vector2(2678, 1705)
 position = Vector2(2001, 1810)
 
 [node name="Fishes" type="Node2D" parent="."]
-position = Vector2(-75, -53)
 
 [node name="Fish" parent="Fishes" instance=ExtResource("6_ggy3q")]
 position = Vector2(767, 19)
