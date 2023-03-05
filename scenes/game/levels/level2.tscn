@@ -27,7 +27,7 @@ health = 5
 
 [node name="AINodes" type="Node2D" parent="."]
 script = ExtResource("4_i4kde")
-LevelData = Array[String](["A1,A2", "A2,A3", "A3,A4", "A4,A5", "A5,A6", "A6,A1", "A1,A4", "A1,A5", "A1,A3", "A2,A4", "A2,A5", "A2,A6", "A3,A5", "A3,A6", "A4,A6", "B1,B2", "B2,B3", "B3,B4", "B3,B5", "B4,B6", "B5,B6", "B6,B7", "B6,B8"])
+LevelData = Array[String](["A1,A2", "A2,A3", "A3,A4", "A4,A5", "A5,A6", "A6,A1", "A1,A4", "A1,A5", "A1,A3", "A2,A4", "A2,A5", "A2,A6", "A3,A5", "A3,A6", "A4,A6", "B1,B2", "B2,B3", "B3,B4", "B3,B5", "B4,B6", "B5,B6", "B6,B7", "B6,B8", "C1,C2", "C2,C3", "C3,C4", "C4,C5", "C5,C6", "C6,C7", "C7,C8", "C8,C9", "C9,C10", "D6,D20", "D1,D2", "D2,D3", "D3,D4", "D4,D5", "D5,D6", "D6,D7", "D7,D8", "D8,D9", "D9,D10", "D10,D11", "D11,D12", "D12,D13", "D13,D14", "D14,D15", "D15,D16", "D16,D17", "D17,D18", "D18,D19", "D19,D1", "E1,E2", "E2,E3", "E3,E4", "E4,E5", "E5,E6", "E6,E8", "E5,E8", "E6,E1", "E8,E7", "E8,E9", "E6,E7", "E5,E9", "E7,E5", "E6,E9"])
 
 [node name="AIMovNodeA1" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(1447, -439)
@@ -71,11 +71,166 @@ position = Vector2(-927, 1241)
 [node name="AIMovNodeB8" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(-870, 939)
 
+[node name="AIMovNodeC1" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-165, 1682)
+
+[node name="AIMovNodeC2" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-568, 1641)
+
+[node name="AIMovNodeC3" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-741, 1757)
+rotation = -0.29888
+
+[node name="AIMovNodeC4" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-1092, 1589)
+rotation = -0.29888
+
+[node name="AIMovNodeC5" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-1745, 1591)
+rotation = -0.29888
+
+[node name="AIMovNodeC6" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2083, 1689)
+rotation = -0.29888
+
+[node name="AIMovNodeC7" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2285, 1511)
+rotation = -0.29888
+
+[node name="AIMovNodeC8" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2457, 1449)
+rotation = -0.29888
+
+[node name="AIMovNodeC9" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2598, 1652)
+rotation = -0.29888
+
+[node name="AIMovNodeC10" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2832, 1689)
+rotation = -0.29888
+
+[node name="AIMovNodeD1" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2520, 2589)
+rotation = -0.29888
+
+[node name="AIMovNodeD2" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2392, 2708)
+rotation = -0.29888
+
+[node name="AIMovNodeD3" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2360, 2823)
+rotation = -0.29888
+
+[node name="AIMovNodeD4" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2173, 2831)
+rotation = -0.29888
+
+[node name="AIMovNodeD5" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-1945, 2969)
+rotation = -0.29888
+
+[node name="AIMovNodeD6" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-1939, 3248)
+rotation = -0.29888
+
+[node name="AIMovNodeD20" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2201, 3205)
+rotation = -0.29888
+
+[node name="AIMovNodeD7" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-1933, 3499)
+rotation = -0.29888
+
+[node name="AIMovNodeD8" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2059, 3595)
+rotation = -0.29888
+
+[node name="AIMovNodeD9" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2167, 3661)
+rotation = -0.29888
+
+[node name="AIMovNodeD10" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2295, 3761)
+rotation = -0.29888
+
+[node name="AIMovNodeD11" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2474, 3655)
+rotation = -0.29888
+
+[node name="AIMovNodeD12" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2636, 3651)
+rotation = -0.29888
+
+[node name="AIMovNodeD13" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2772, 3706)
+rotation = -0.29888
+
+[node name="AIMovNodeD14" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2853, 3647)
+rotation = -0.29888
+
+[node name="AIMovNodeD15" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2917, 3402)
+rotation = -0.29888
+
+[node name="AIMovNodeD16" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-3057, 3208)
+rotation = -0.29888
+
+[node name="AIMovNodeD17" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2864, 2883)
+rotation = -0.29888
+
+[node name="AIMovNodeD18" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2684, 2817)
+rotation = -0.29888
+
+[node name="AIMovNodeD19" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-2612, 2701)
+rotation = -0.29888
+
+[node name="AIMovNodeE1" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(2387, 1750)
+rotation = -0.29888
+
+[node name="AIMovNodeE2" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(2865, 1841)
+rotation = -0.29888
+
+[node name="AIMovNodeE3" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(2932, 2231)
+rotation = -0.29888
+
+[node name="AIMovNodeE4" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(2660, 2431)
+rotation = -0.29888
+
+[node name="AIMovNodeE5" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(2037, 2465)
+rotation = -0.29888
+
+[node name="AIMovNodeE6" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(1954, 1948)
+rotation = -0.29888
+
+[node name="AIMovNodeE7" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(1418, 1748)
+rotation = -0.29888
+
+[node name="AIMovNodeE8" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(1622, 2115)
+rotation = -0.29888
+
+[node name="AIMovNodeE9" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(1501, 2481)
+rotation = -0.29888
+
 [node name="Fishes" type="Node2D" parent="."]
 
 [node name="Fish" parent="Fishes" instance=ExtResource("6_it5j6")]
 position = Vector2(595, 281)
 collision_layer = 2
+MyBehavior = 2
 
 [node name="KeyBinding" parent="." instance=ExtResource("7_rtwdd")]
 position = Vector2(1255, 176)
