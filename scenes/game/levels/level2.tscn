@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=11 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_rbtqu"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g24dn"]
+size = Vector2(1253, 75)
 
 [node name="Level2" type="TileMap"]
 position = Vector2(-872, -920)
@@ -26,13 +29,13 @@ health = 5
 script = ExtResource("4_i4kde")
 LevelData = Array[String](["4,5", "5,6", "6,4"])
 
-[node name="AIMovNode4" parent="AINodes" instance=ExtResource("5_0r0a7")]
+[node name="AIMovNodeA1" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(802, -230)
 
-[node name="AIMovNode5" parent="AINodes" instance=ExtResource("5_0r0a7")]
+[node name="AIMovNodeA2" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(755, 596)
 
-[node name="AIMovNode6" parent="AINodes" instance=ExtResource("5_0r0a7")]
+[node name="AIMovNodeA3" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(607, -51)
 
 [node name="Fishes" type="Node2D" parent="."]
@@ -52,6 +55,12 @@ offset_bottom = 124.0
 theme_override_fonts/font = ExtResource("8_rbtqu")
 
 [node name="Background" parent="." instance=ExtResource("9_bcw6o")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(750.5, -965)
+shape = SubResource("RectangleShape2D_g24dn")
 
 [editable path="Player"]
 [editable path="Player/Hud"]
