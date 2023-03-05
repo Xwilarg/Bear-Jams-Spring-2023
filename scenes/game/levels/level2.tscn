@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=10 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
+[ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="3_2ku2e"]
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_i4kde"]
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="5_0r0a7"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="6_it5j6"]
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
-[ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
+[ext_resource type="PackedScene" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
 
 [node name="Level2" type="TileMap"]
@@ -20,6 +21,7 @@ z_index = 10
 position = Vector2(1300, 135)
 collision_layer = 4
 health = 5
+net = ExtResource("3_2ku2e")
 
 [node name="AINodes" type="Node2D" parent="."]
 script = ExtResource("4_i4kde")
@@ -48,6 +50,10 @@ offset_left = 1166.0
 offset_top = 49.0
 offset_right = 1337.0
 offset_bottom = 124.0
-theme_override_colors/font_color = Color(0.921569, 0.921569, 0.286275, 1)
 
 [node name="Background" parent="." instance=ExtResource("9_bcw6o")]
+
+[editable path="Player"]
+[editable path="Player/Hud"]
+[editable path="Player/Hud/Pressure"]
+[editable path="Player/Hud/Health"]

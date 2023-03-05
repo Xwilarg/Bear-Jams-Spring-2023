@@ -46,7 +46,7 @@ func _process(delta):
 		linear_velocity = Vector2.ZERO
 	
 	# pressure = depth?
-	pressure = global_position.y * 0.1
+	pressure = (global_position.y + 1000) * 0.02
 	
 	# animation
 	if Input.is_action_pressed("move_down") \
