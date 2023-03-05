@@ -99,8 +99,9 @@ func _integrate_forces(state):
 			var tmp = lastNode
 			lastNode = next
 			next = next.getRandomNext(tmp)
+	normals[Type].flip_h = linear_velocity.x > 0
 	var x_scale = 1 if linear_velocity.x > 0 else -1
-	scale = Vector2(x_scale, 1)
+	(rayContainer as Node2D).scale = Vector2(x_scale, 1)
 
 func get_hit():
 	can_move = false
