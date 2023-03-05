@@ -7,6 +7,7 @@ enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
 @export var Speed: float
 @export var MinDistance: int
 @export var MyBehavior: Behavior
+@onready var rayContainer = $"Rays"
 @onready var rays = $"Rays".get_children()
 
 var next: NextNode
@@ -92,6 +93,8 @@ func _integrate_forces(state):
 			lastNode = next
 			next = next.getRandomNext(tmp)
 	normals[target_index].flip_h = linear_velocity.x > 0
+	var x_scale = 1 if linear_velocity.x > 0 else -1
+	(rayContainer as Node2D).scale = Vector2(x_scale, 1)
 
 func get_hit():
 	can_move = false
