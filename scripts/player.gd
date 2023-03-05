@@ -26,11 +26,11 @@ const NET_RELOAD_REF = 2.0;
 
 
 @onready var sprite = %Sprite2D
+@export var shootAudioPlayer: AudioStreamPlayer2D
 
 
 func _ready():
 	originalPos = global_position
-
 
 func _process(delta):
 	net_reload_timer -= delta
@@ -44,6 +44,7 @@ func _process(delta):
 		sprite.flip_h = true
 	
 	if Input.is_action_just_pressed("fire") and net_reload_timer <= 0.0:
+		shootAudioPlayer.play()
 		var go = net.instantiate()
 		get_parent().add_child(go)
 		go.position = position

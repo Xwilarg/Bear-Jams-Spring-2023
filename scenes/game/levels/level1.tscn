@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://m734u7l8e77m"]
+[gd_scene load_steps=10 format=3 uid="uid://m734u7l8e77m"]
 
-[ext_resource type="TileSet" uid="uid://d1o2dtlsq2i3x" path="res://scenes/game/levels/tilesets/cave.tres" id="1_rdxa2"]
+[ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_rdxa2"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="3_1cw7a"]
 [ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="3_fnece"]
@@ -9,9 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="7_l554n"]
 [ext_resource type="Texture2D" uid="uid://ywwjo0p240j7" path="res://assets/textures/ui/Keys.PNG" id="8_c0j43"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="9_b7o5j"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rvxk4"]
-friction = 0.0
 
 [node name="Level1" type="TileMap"]
 position = Vector2(-15, 24)
@@ -49,12 +46,6 @@ position = Vector2(220, 688)
 [node name="Fish" parent="Fishes" instance=ExtResource("3_1cw7a")]
 position = Vector2(619, 681)
 collision_layer = 2
-inertia = 1.0
-physics_material_override = SubResource("PhysicsMaterial_rvxk4")
-continuous_cd = 1
-max_contacts_reported = 5
-contact_monitor = true
-lock_rotation = true
 MyBehavior = 2
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_l554n")]
