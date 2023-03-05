@@ -1,14 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsqommrhh77n4"]
+[gd_scene load_steps=4 format=3 uid="uid://dsqommrhh77n4"]
 
 [ext_resource type="Script" path="res://scripts/fish_ai.gd" id="1_p5ffc"]
-[ext_resource type="Texture2D" uid="uid://wj1rjldj5vi0" path="res://assets/textures/sprites/Fish.png" id="2_dsjwk"]
+[ext_resource type="Texture2D" uid="uid://lqfm8sqnl82f" path="res://assets/textures/sprites/fishes/cuttlefish/IMG_1074.PNG" id="2_m86bq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qpk5y"]
 friction = 0.0
 bounce = 0.2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_prehy"]
-size = Vector2(52, 28)
 
 [node name="Fish" type="RigidBody2D"]
 collision_mask = 5
@@ -23,12 +20,10 @@ script = ExtResource("1_p5ffc")
 Speed = 100.0
 MinDistance = 20
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_prehy")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_dsjwk")
+texture = ExtResource("2_m86bq")
+flip_h = true
 
 [node name="Rays" type="Node2D" parent="."]
 
@@ -67,5 +62,8 @@ collision_mask = 4
 [node name="RayMid" type="RayCast2D" parent="Rays"]
 target_position = Vector2(200, 1)
 collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(3, -12, -7, -13, -17, -7, -21, -10, -22, -6, -21, -3, -15, -1, -9, 5, -6, 7, -3, 7, 3, 6, 6, 5, 16, 11, 13, 14, 17, 18, 22, 14, 21, 5, 12, -9)
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
