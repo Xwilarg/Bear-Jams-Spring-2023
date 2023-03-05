@@ -57,7 +57,7 @@ func _ready():
 func _integrate_forces(state):
 	queue_redraw()
 
-	if !can_move || stun_timer > 0.0 || MyBehavior == Behavior.BEHAV_IDLE:
+	if !can_move || stun_timer > 0.0:
 		return
 
 	var target: Vector2
@@ -69,10 +69,13 @@ func _integrate_forces(state):
 		target = next.position
 
 	linear_velocity = (target - position).normalized() * currSpeed
-	if !is_chasing && position.distance_to(next.position) < MinDistance:
-		var tmp = lastNode
-		lastNode = next
-		next = next.getRandomNext(tmp)
+	if position.distance_to(next.position) < MinDistance:
+		if MyBehavior == Behavior.BEHAV_IDLE:
+			linear_velocity = Vector2.ZERO
+		elif !is_chasing:
+			var tmp = lastNode
+			lastNode = next
+			next = next.getRandomNext(tmp)
 	sr.flip_h = linear_velocity.x > 0
 
 func get_hit():
