@@ -152,36 +152,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Credits"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -37.5
-offset_right = 47.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_2h83x")
-text = "KEY_CREDITS
-
-KEY_ART
-Trace Zhu
-
-KEY_GAMEDESIGN
-Cahar S.
-
-KEY_SOUNDDESIGN
-BerryNote
-
-KEY_PROGRAMMING
-zhiyang
-Kirito
-Christian Chaux"
-
 [node name="Button" type="Button" parent="CanvasLayer/Credits"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
@@ -192,6 +162,91 @@ offset_left = -20.0
 offset_bottom = 31.0
 grow_horizontal = 0
 text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -187.5
+offset_right = 72.5
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_CREDITS"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_ART"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "Trace Zhu"
+
+[node name="Label5" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+
+[node name="Label6" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_GAMEDESIGN"
+
+[node name="Label7" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "Cahar S."
+
+[node name="Label8" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+
+[node name="Label9" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_SOUNDDESIGN"
+
+[node name="Label10" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "BerryNote"
+
+[node name="Label11" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+
+[node name="Label12" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_PROGRAMMING"
+
+[node name="Label13" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "zhiyang"
+
+[node name="Label14" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "Kirito"
+
+[node name="Label15" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "Christian Chaux"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_credits_pressed"]
