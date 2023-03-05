@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="5_0r0a7"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="6_it5j6"]
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
-[ext_resource type="PackedScene" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
+[ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
 
 [node name="Level2" type="TileMap"]
