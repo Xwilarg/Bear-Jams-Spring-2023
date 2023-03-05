@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_rbtqu"]
-[ext_resource type="PackedScene" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+[ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g24dn"]
 size = Vector2(1253, 75)

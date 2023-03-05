@@ -3,6 +3,7 @@ extends RigidBody2D
 class_name Fish
 
 enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
+enum FishType {  }
 
 @export var Speed: float
 @export var MinDistance: int
