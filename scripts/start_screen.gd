@@ -1,10 +1,32 @@
 extends Control
 
-@export var credits: Panel
+
+@export var swim_frequency: float = 2.0
+@export var swim_amplitude: float = 50.0
+
 var level1 = preload("res://scenes/game/levels/level1.tscn")
+
+var _time: float = 0
+
+@onready var credits_button := %CreditsButton as Button
+@onready var credits := %Credits as Panel
+
 
 func _ready():
 	TranslationServer.set_locale("en") # Use to debug languages
+
+
+func _physics_process(delta):
+	# move right
+	credits_button.position.x += 1
+	
+	if credits_button.position.x > 1000:
+		credits_button.position.x = -300
+	
+	# swim
+	_time += delta
+	credits_button.position.y += cos(_time * swim_frequency) * swim_amplitude * delta
+
 
 func _on_button_pressed():
 	get_tree().change_scene_to_packed(level1)
