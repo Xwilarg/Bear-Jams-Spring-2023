@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=10 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_6lad6"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_llrij"]
@@ -7,6 +7,10 @@
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_jhdc0"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="5_2wutn"]
 [ext_resource type="Shader" path="res://assets/shaders/FlashLight.gdshader" id="6_7x3sc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24odd"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ymri"]
 shader = ExtResource("6_7x3sc")
@@ -27,8 +31,9 @@ z_index = 10
 position = Vector2(745, 196)
 collision_layer = 4
 inertia = 1.0
+physics_material_override = SubResource("PhysicsMaterial_24odd")
 gravity_scale = 0.1
-continuous_cd = 2
+continuous_cd = 1
 max_contacts_reported = 10
 contact_monitor = true
 lock_rotation = true
