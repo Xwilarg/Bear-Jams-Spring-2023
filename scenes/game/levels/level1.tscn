@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://m734u7l8e77m"]
+[gd_scene load_steps=11 format=3 uid="uid://m734u7l8e77m"]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_lmape"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="3_q0x0o"]
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_h6lwk"]
 [ext_resource type="Shader" path="res://assets/shaders/FlashLight.gdshader" id="6_1xsb7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hiula"]
+bounce = 1.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rvxk4"]
 friction = 0.0
@@ -29,6 +32,10 @@ layer_0/tile_data = PackedInt32Array(0, 1048577, 4, 1, 851969, 0, 2, 851969, 0, 
 z_index = 10
 position = Vector2(944, 483)
 collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_hiula")
+gravity_scale = 0.1
+continuous_cd = 1
+lock_rotation = true
 net = ExtResource("3_fnece")
 light = NodePath("../HUD/ShaderRect")
 

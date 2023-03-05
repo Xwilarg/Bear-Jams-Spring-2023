@@ -73,4 +73,5 @@ func collect():
 		self.queue_free()
 
 func _draw():
-	draw_line(to_local(position), to_local(last_player_pos if is_chasing else next.position), Color.RED, 3.0)
+	if next != null:
+		draw_line(to_local(position), to_local(last_player_pos if is_chasing else next.position), Color.RED, 3.0)
