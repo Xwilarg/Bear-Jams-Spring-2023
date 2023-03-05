@@ -28,30 +28,17 @@ const NET_RELOAD_REF = 2.0;
 @onready var sprite = %Sprite2D
 @export var shootAudioPlayer: AudioStreamPlayer2D
 
+var broken = false
+
 
 func _ready():
 	originalPos = global_position
 
 func _process(delta):
-	net_reload_timer -= delta
-	
-	if x_direction == null:
+	if broken:
 		return
 	
-	if sprite.flip_h and x_direction > 0:
-		sprite.flip_h = false
-	elif (not sprite.flip_h) and x_direction < 0:
-		sprite.flip_h = true
-	
-	if Input.is_action_just_pressed("fire") and net_reload_timer <= 0.0:
-		shootAudioPlayer.play()
-		var go = net.instantiate()
-		get_parent().add_child(go)
-		go.position = position
-		var x = -1 if sprite.flip_h else 1
-		(go as RigidBody2D).add_constant_central_force(Vector2(3 * x, -1).normalized() * 350)
-		(go.get_node("Sprite2D") as Sprite2D).flip_h = x
-		net_reload_timer = NET_RELOAD_REF
+	net_reload_timer -= delta
 	
 	if Input.is_action_just_pressed("reset"):
 		position = originalPos
@@ -71,9 +58,30 @@ func _process(delta):
 	else:
 		if sprite.frame == 1:
 			sprite.frame = 0
+	
+	if x_direction == null:
+		return
+	
+	if sprite.flip_h and x_direction > 0:
+		sprite.flip_h = false
+	elif (not sprite.flip_h) and x_direction < 0:
+		sprite.flip_h = true
+	
+	if Input.is_action_just_pressed("fire") and net_reload_timer <= 0.0:
+		shootAudioPlayer.play()
+		var go = net.instantiate()
+		get_parent().add_child(go)
+		go.position = position
+		var x = -1 if sprite.flip_h else 1
+		(go as RigidBody2D).add_constant_central_force(Vector2(3 * x, -1).normalized() * 350)
+		(go.get_node("Sprite2D") as Sprite2D).flip_h = x
+		net_reload_timer = NET_RELOAD_REF
 
 
 func _integrate_forces( state ):
+	if broken:
+		return
+	
 	var velocity = Vector2.ZERO
 
 	# add thrust
@@ -115,3 +123,5 @@ func _integrate_forces( state ):
 
 func take_damage(amount: int):
 	health -= amount
+	if health == 0:
+		broken = true
