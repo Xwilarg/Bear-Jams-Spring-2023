@@ -6,10 +6,10 @@ KEY_GAMEDESIGN;Game Design;Design du jeu;Game Design;Spieldesign
 KEY_SOUNDDESIGN;Sound Design;Sons et musiques;Sound Design;Sounddesign
 KEY_PROGRAMMING;Programming;Programmation;Development;Programmierung
 KEY_SPACEBAR;Space;Espace;Space;Leertaste
-KEY_PRESSURE;Pressure;Pression;;Druck
+KEY_PRESSURE;Pressure;Pression;Basinc;Druck
 KEY_FONT;Font by TheHungryJPEG;Police par TheHungryJPEG;Font by TheHungryJPEG;Schriftart von TheHungryJPEG
 KEY_INSTRUCTIONS;Stun and collect the fishes;Etourdi et recupere les poissons;Baliklari sersemlet ve sonra topla;Stelle Fische ruhig und sammle sie
-KEY_RETRY;Press R to retry;Appuyez sur R pour reessayer;Tekrar denemek icin R'ye bascn; R zum Neu starten
+KEY_RETRY;Press R to retry;Appuyez sur R pour reessayer;Tekrar oynamak icin R'ye bas; R zum Neu starten
 
 KEY_CAPTURE_1;I have you now;Je t'ai maintenant;Simdi seni yakaladim
 KEY_CAPTURE_2;Thats another one for the tank;Et un autre pour la reserve;Akvaryumumda cok guzel gozukeceksin
