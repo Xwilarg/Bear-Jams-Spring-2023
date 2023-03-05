@@ -59,6 +59,7 @@ position = Vector2(-75, -53)
 [node name="Fish" parent="Fishes" instance=ExtResource("5_2wutn")]
 position = Vector2(595, 281)
 collision_layer = 2
+inertia = 1.0
 lock_rotation = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
