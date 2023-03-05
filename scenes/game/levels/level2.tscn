@@ -32,43 +32,33 @@ light = NodePath("../HUD/ShaderRect")
 
 [node name="AIMovNode4" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(-388, 1056)
-Next = Array[String](["5"])
 
 [node name="AIMovNode5" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(509, 1056)
-Next = Array[String](["6", "4"])
 
 [node name="AIMovNode6" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(675, 604)
-Next = Array[String](["7", "5"])
 
 [node name="AIMovNode7" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(915, 606)
-Next = Array[String](["8", "6"])
 
 [node name="AIMovNode8" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(1002, 1100)
-Next = Array[String](["7", "9", "10"])
 
 [node name="AIMovNode9" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(1419, 940)
-Next = Array[String](["8", "10"])
 
 [node name="AIMovNode10" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(1557, 818)
-Next = Array[String](["9", "12", "8", "11"])
 
 [node name="AIMovNode11" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(1745, 874)
-Next = Array[String](["10", "13", "12"])
 
 [node name="AIMovNode12" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(1741, 1240)
-Next = Array[String](["11", "10", "13"])
 
 [node name="AIMovNode13" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(2411, 1238)
-Next = Array[String](["12", "11"])
 
 [node name="Fishes" type="Node2D" parent="."]
 

@@ -3,7 +3,7 @@ extends Node2D
 
 class_name NextNode
 
-@export var Next: Array[String] # Thanks Godot https://github.com/godotengine/godot/issues/62916
+var Next: Array[String]
 
 @export var refresh_draw = false : set = set_refresh
 
@@ -31,13 +31,8 @@ func getRandomNext(exclude: NextNode):
 	return indexToNode(indexArray[(get_tree().root.get_node("Rng") as RNG).random(indexArray.size())])
 
 func _ready():
-	# For each next node, we add ourself to it
 	var me = name.right(name.length() - 9)
-	for i in range(0, Next.size()):
-		var node = (indexToNode(i) as NextNode)
-		if !node.Next.has(me):
-			node.Next.push_back(me)
-		
+	Next = (get_parent() as NodeManager).get_my_nodes(me)
 
 func _draw():
 	for i in range(0, Next.size()):
