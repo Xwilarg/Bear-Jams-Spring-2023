@@ -37,12 +37,10 @@ func _process(delta):
 		if c != null and c.name == "Player":
 			is_chasing = true
 			last_player_pos = c.global_position
-			print(name + " is chasing player")
 			return
 
 	if is_chasing:
 		is_chasing = false
-		print(name + " lost player")
 		get_closest_node(last_player_pos)
 
 func get_closest_node(pos: Vector2):
@@ -52,7 +50,6 @@ func get_closest_node(pos: Vector2):
 	var targetNodes = get_tree().get_current_scene().get_node("AINodes").get_children()
 	targetNodes.sort_custom(filter)
 	next = targetNodes[0]
-	print(name + " going to " + next.name)
 
 func _ready():
 	normals = [
