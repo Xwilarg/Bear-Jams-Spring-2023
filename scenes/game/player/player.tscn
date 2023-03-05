@@ -64,3 +64,4 @@ polygon = PackedVector2Array(-5, -14, -19, -11, -24, -19, -29, -19, -30, -14, -3
 [node name="InvincibleTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 0.2
+one_shot = true
