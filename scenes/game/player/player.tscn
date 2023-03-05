@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkbmu2ssf5imj"]
+[gd_scene load_steps=7 format=3 uid="uid://bkbmu2ssf5imj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fdpge"]
 [ext_resource type="Texture2D" uid="uid://d2nbbmxoo0vkf" path="res://assets/textures/sprites/submarine_animated.PNG" id="2_fqad5"]
+[ext_resource type="AudioStream" uid="uid://dwlphk1ryt2rb" path="res://assets/audio/shooting.mp3" id="2_xxu1u"]
 [ext_resource type="PackedScene" uid="uid://c4kijmqp8bswt" path="res://scenes/game/player/hud.tscn" id="3_v4mv5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i4x3y"]
@@ -11,7 +12,7 @@ bounce = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8wx5"]
 size = Vector2(40, 32)
 
-[node name="Player" type="RigidBody2D" groups=["player"]]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("shootAudioPlayer") groups=["player"]]
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_i4x3y")
 gravity_scale = 0.15
@@ -20,6 +21,7 @@ max_contacts_reported = 10
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_fdpge")
+shootAudioPlayer = NodePath("ShootAudioPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -34,3 +36,7 @@ vframes = 2
 shape = SubResource("RectangleShape2D_f8wx5")
 
 [node name="Hud" parent="." instance=ExtResource("3_v4mv5")]
+
+[node name="ShootAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_xxu1u")
+volume_db = 15.0
