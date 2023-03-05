@@ -55,6 +55,7 @@ continuous_cd = 1
 max_contacts_reported = 5
 contact_monitor = true
 lock_rotation = true
+MyBehavior = 2
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_l554n")]
 

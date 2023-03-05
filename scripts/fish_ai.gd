@@ -3,8 +3,11 @@ extends RigidBody2D
 
 class_name Fish
 
+enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
+
 @export var Speed: float
 @export var MinDistance: int
+@export var MyBehavior: Behavior
 @onready var rays = $"Rays".get_children()
 
 var next: NextNode
@@ -18,6 +21,14 @@ var is_chasing = false
 var stun_timer = 0.0
 
 func _process(delta):
+	if stun_timer > 0.0:
+		stun_timer -= delta
+		if stun_timer <= 0.0:
+			get_closest_node(last_player_pos)
+
+	if MyBehavior == Behavior.BEHAV_IDLE or MyBehavior == Behavior.BEHAV_PATROL:
+		return
+
 	for ray in rays:
 		var c = (ray as RayCast2D).get_collider()
 		if c != null and c.name == "Player":
@@ -28,11 +39,6 @@ func _process(delta):
 	if is_chasing:
 		is_chasing = false
 		get_closest_node(last_player_pos)
-
-	if stun_timer > 0.0:
-		stun_timer -= delta
-		if stun_timer <= 0.0:
-			get_closest_node(last_player_pos)
 
 func get_closest_node(pos: Vector2):
 	var filter := func distanceComparaison(a: Node2D, b: Node2D):
@@ -51,12 +57,12 @@ func _ready():
 func _integrate_forces(state):
 	queue_redraw()
 
-	if !can_move || stun_timer > 0.0:
+	if !can_move || stun_timer > 0.0 || MyBehavior == Behavior.BEHAV_IDLE:
 		return
 
 	var target: Vector2
 	var currSpeed = Speed
-	if is_chasing:
+	if is_chasing && MyBehavior == Behavior.BEHAV_CHASE:
 		target = last_player_pos
 		currSpeed *= 1.3
 	else:
