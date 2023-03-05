@@ -9,6 +9,7 @@ var pressure: float
 
 
 const MAX_VELOCITY = 150.0
+const DRAG = 2.0
 
 var thrust = 10.0
 
@@ -68,12 +69,16 @@ func _integrate_forces( state ):
 		if (y_direction < 0 && velocity.y > 0) || (y_direction > 0 && velocity.y < 0):
 			y_direction *= 2
 		velocity.y += y_direction * thrust
+	else:
+		linear_velocity.y = move_toward(linear_velocity.y, 0, DRAG)
 
 	x_direction = Input.get_axis("move_left", "move_right")
 	if x_direction:
 		if (x_direction < 0 && velocity.x > 0) || (x_direction > 0 && velocity.x < 0):
 			x_direction *= 2
 		velocity.x += x_direction * thrust
+	else:
+		linear_velocity.x = move_toward(linear_velocity.x, 0, DRAG)
 
 	linear_velocity += velocity
 	
