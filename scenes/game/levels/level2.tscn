@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=26 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_rbtqu"]
-[ext_resource type="PackedScene" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
-[ext_resource type="PackedScene" path="res://scenes/game/_shared/sound_trigger.tscn" id="10_m0lkr"]
+[ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+[ext_resource type="PackedScene" uid="uid://dq3as5dckne6y" path="res://scenes/game/_shared/sound_trigger.tscn" id="10_m0lkr"]
 [ext_resource type="AudioStream" uid="uid://33gitpwbcltd" path="res://assets/audio/All/nautilus_sfx.mp3" id="11_q5gjc"]
 [ext_resource type="AudioStream" uid="uid://c1fb573rvprtk" path="res://assets/audio/All/cuttlefish_sfx.mp3" id="11_vgx6w"]
 [ext_resource type="Texture2D" uid="uid://c0crnfy4g2n7t" path="res://assets/textures/sprites/decorations/IMG_1130.PNG" id="12_7nr8j"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c3inujlfm4ni5" path="res://assets/textures/sprites/decorations/IMG_1145.PNG" id="17_2vup0"]
 [ext_resource type="Texture2D" uid="uid://b4unii0nrftlo" path="res://assets/textures/sprites/decorations/IMG_1146.PNG" id="18_sxk8o"]
 [ext_resource type="Texture2D" uid="uid://b4q507lhxo007" path="res://assets/textures/sprites/decorations/IMG_1147.PNG" id="19_ydv16"]
+[ext_resource type="PackedScene" uid="uid://dylblfp7oift2" path="res://scenes/game/bgm.tscn" id="24_tpi2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g24dn"]
 size = Vector2(1253, 75)
@@ -560,6 +561,8 @@ texture = ExtResource("19_ydv16")
 position = Vector2(1982, 629)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_ydv16")
+
+[node name="bgm" parent="." instance=ExtResource("24_tpi2h")]
 
 [editable path="Player"]
 [editable path="Player/Hud"]
