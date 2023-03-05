@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://m734u7l8e77m"]
+[gd_scene load_steps=10 format=3 uid="uid://m734u7l8e77m"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_rdxa2"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_h6lwk"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="7_l554n"]
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="8_kx2rk"]
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="9_b7o5j"]
 
 [node name="Level1" type="TileMap"]
 position = Vector2(-15, 24)
@@ -50,7 +51,17 @@ MyBehavior = 2
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_l554n")]
 
 [node name="KeyBinding" parent="." instance=ExtResource("8_kx2rk")]
+position = Vector2(667, 204)
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+custom_minimum_size = Vector2(0, 75)
+offset_left = 618.0
+offset_top = 97.0
+offset_right = 789.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.921569, 0.921569, 0.286275, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 20
+text = "KEY_INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
