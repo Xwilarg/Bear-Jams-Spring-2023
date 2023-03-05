@@ -155,7 +155,19 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("8_2h83x")
 text = "KEY_CREDITS
 
-BLABLABLA"
+KEY_ART
+Trace Zhu
+
+KEY_GAMEDESIGN
+Cahar S.
+
+KEY_SOUNDDESIGN
+BerryNote
+
+KEY_PROGRAMMING
+zhiyang
+Kirito
+Christian Chaux"
 
 [node name="Button" type="Button" parent="CanvasLayer/Credits"]
 custom_minimum_size = Vector2(20, 20)
