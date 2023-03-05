@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=13 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_rbtqu"]
-[ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+[ext_resource type="PackedScene" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+[ext_resource type="PackedScene" path="res://scenes/game/_shared/sound_trigger.tscn" id="10_m0lkr"]
+[ext_resource type="AudioStream" uid="uid://c1fb573rvprtk" path="res://assets/audio/All/cuttlefish_sfx.mp3" id="11_vgx6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g24dn"]
 size = Vector2(1253, 75)
@@ -167,7 +169,17 @@ shape = SubResource("RectangleShape2D_g24dn")
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1340, 2010)
 
+[node name="SoundTrigger" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(541, -469)
+
+[node name="TriggerShape" parent="SoundTrigger" index="0"]
+position = Vector2(1, 12)
+
+[node name="SoundPlayer" parent="SoundTrigger" index="1"]
+stream = ExtResource("11_vgx6w")
+
 [editable path="Player"]
 [editable path="Player/Hud"]
 [editable path="Player/Hud/Pressure"]
 [editable path="Player/Hud/Health"]
+[editable path="SoundTrigger"]
