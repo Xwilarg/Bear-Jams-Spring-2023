@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://m734u7l8e77m"]
+[gd_scene load_steps=9 format=3 uid="uid://m734u7l8e77m"]
 
 [ext_resource type="TileSet" uid="uid://d1o2dtlsq2i3x" path="res://scenes/game/levels/tilesets/cave.tres" id="1_rdxa2"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
@@ -7,10 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="3_q0x0o"]
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_h6lwk"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="7_l554n"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hiula"]
-friction = 0.0
-bounce = 1.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rvxk4"]
 friction = 0.0
@@ -25,10 +21,6 @@ layer_0/tile_data = PackedInt32Array(0, 196609, 1, 1, 196609, 1, 2, 196609, 1, 3
 z_index = 10
 position = Vector2(944, 483)
 collision_layer = 4
-physics_material_override = SubResource("PhysicsMaterial_hiula")
-gravity_scale = 0.1
-continuous_cd = 1
-lock_rotation = true
 net = ExtResource("3_fnece")
 
 [node name="AINodes" type="Node2D" parent="."]

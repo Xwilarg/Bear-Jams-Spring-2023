@@ -85,7 +85,9 @@ func _integrate_forces( state ):
 	# clamp velocity
 	linear_velocity = linear_velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
 	
+	print(state.get_contact_count())
 	if(state.get_contact_count() >= 1):
+		print(state.get_contact_collider_object(0).name)
 		if state.get_contact_collider_object(0).name.begins_with("Fish"):
 			var fish = (state.get_contact_collider_object(0) as Fish)
 			if fish.can_collect():
