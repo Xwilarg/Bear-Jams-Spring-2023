@@ -35,7 +35,7 @@ func _process(delta):
 		var c = (ray as RayCast2D).get_collider()
 		if c != null and c.name == "Player":
 			is_chasing = true
-			last_player_pos = c.position
+			last_player_pos = c.global_position
 			print(name + " is chasing player")
 			return
 
@@ -46,7 +46,7 @@ func _process(delta):
 
 func get_closest_node(pos: Vector2):
 	var filter := func distanceComparaison(a: Node2D, b: Node2D):
-		return pos.distance_to(a.position) < pos.distance_to(b.position)
+		return pos.distance_to(a.global_position) < pos.distance_to(b.global_position)
 	
 	var targetNodes = get_tree().get_current_scene().get_node("AINodes").get_children()
 	targetNodes.sort_custom(filter)
@@ -69,7 +69,7 @@ func _ready():
 	normals[target_index].get_parent().visible = true
 	lastNode = null
 
-	get_closest_node(position)
+	get_closest_node(global_position)
 
 func _integrate_forces(state):
 	if !can_move || stun_timer > 0.0:
@@ -81,10 +81,10 @@ func _integrate_forces(state):
 		target = last_player_pos
 		currSpeed *= 1.3
 	else:
-		target = next.position
+		target = next.global_position
 
-	linear_velocity = (target - position).normalized() * currSpeed
-	if position.distance_to(next.position) < MinDistance:
+	linear_velocity = (target - global_position).normalized() * currSpeed
+	if global_position.distance_to(next.global_position) < MinDistance:
 		if MyBehavior == Behavior.BEHAV_IDLE:
 			linear_velocity = Vector2.ZERO
 		elif !is_chasing:
