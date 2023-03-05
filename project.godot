@@ -66,7 +66,7 @@ fire={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/text.en.translation", "res://translations/text.fr.translation")
+locale/translations=PackedStringArray("res://translations/text.en.translation", "res://translations/text.fr.translation", "res://translations/text.tr.translation")
 
 [layer_names]
 
