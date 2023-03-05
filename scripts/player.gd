@@ -6,6 +6,7 @@ const MAX_VELOCITY = 150.0
 var thrust = 10.0
 
 var prevVel = Vector2.ZERO
+@onready var originalPos = position
 
 @onready var sprite = %Sprite2D
 var x_direction
@@ -38,6 +39,10 @@ func _process(delta):
 		(go as RigidBody2D).add_constant_central_force(Vector2(3 * x, -1).normalized() * 350)
 		(go.get_node("Sprite2D") as Sprite2D).flip_h = x
 		net_reload_timer = NET_RELOAD_REF
+
+	if Input.is_action_just_pressed("reset"):
+		position = originalPos
+		linear_velocity = Vector2.ZERO
 
 
 func _integrate_forces( state ):
