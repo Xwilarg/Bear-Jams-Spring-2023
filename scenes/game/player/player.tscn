@@ -14,7 +14,7 @@ size = Vector2(40, 32)
 [node name="Player" type="RigidBody2D" groups=["player"]]
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_i4x3y")
-gravity_scale = 0.1
+gravity_scale = 0.15
 continuous_cd = 1
 max_contacts_reported = 10
 contact_monitor = true

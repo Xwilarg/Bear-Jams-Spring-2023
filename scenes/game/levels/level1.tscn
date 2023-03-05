@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://m734u7l8e77m"]
+[gd_scene load_steps=11 format=3 uid="uid://m734u7l8e77m"]
 
 [ext_resource type="TileSet" uid="uid://d1o2dtlsq2i3x" path="res://scenes/game/levels/tilesets/cave.tres" id="1_rdxa2"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="3_q0x0o"]
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_h6lwk"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="7_l554n"]
+[ext_resource type="Texture2D" uid="uid://ywwjo0p240j7" path="res://assets/textures/ui/Keys.PNG" id="8_c0j43"]
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="9_b7o5j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rvxk4"]
 friction = 0.0
@@ -19,7 +21,7 @@ layer_0/tile_data = PackedInt32Array(0, 196609, 1, 1, 196609, 1, 2, 196609, 1, 3
 
 [node name="Player" parent="." instance=ExtResource("2_4hdl7")]
 z_index = 10
-position = Vector2(944, 483)
+position = Vector2(679, 156)
 collision_layer = 4
 net = ExtResource("3_fnece")
 
@@ -55,3 +57,68 @@ contact_monitor = true
 lock_rotation = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_l554n")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(676, 191)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_c0j43")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -325.0
+offset_top = -135.0
+offset_right = -262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 80
+text = "W"
+
+[node name="Label2" type="Label" parent="Sprite2D"]
+offset_left = -420.0
+offset_top = -20.0001
+offset_right = -357.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 80
+text = "A"
+
+[node name="Label3" type="Label" parent="Sprite2D"]
+offset_left = -300.0
+offset_top = -30.0001
+offset_right = -237.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 80
+text = "S"
+
+[node name="Label4" type="Label" parent="Sprite2D"]
+offset_left = -165.0
+offset_top = -30.0001
+offset_right = -102.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 80
+text = "D"
+
+[node name="Label5" type="Label" parent="Sprite2D"]
+offset_left = -110.0
+offset_top = -140.0
+offset_right = -47.0002
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 80
+text = "R"
+
+[node name="Label6" type="Label" parent="Sprite2D"]
+offset_left = -25.0002
+offset_top = -40.0
+offset_right = 510.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_b7o5j")
+theme_override_font_sizes/font_size = 80
+text = "KEY_SPACEBAR"
+horizontal_alignment = 1
