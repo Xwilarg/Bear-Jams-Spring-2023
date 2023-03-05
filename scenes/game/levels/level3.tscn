@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bb6nl58syb57l"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_s5nxw"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_ggwse"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_sexbo"]
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="5_omec2"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="6_ggy3q"]
-[ext_resource type="Shader" path="res://assets/shaders/FlashLight.gdshader" id="7_vtnya"]
+[ext_resource type="Shader" path="res://scenes/game/player/hud_elements/flashlight.gdshader" id="7_vtnya"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24odd"]
 friction = 0.0

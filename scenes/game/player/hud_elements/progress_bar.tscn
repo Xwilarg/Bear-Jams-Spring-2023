@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxasbedwsr5na"]
+
+[ext_resource type="Texture2D" uid="uid://ooqtch5ni64k" path="res://assets/textures/ui/bar.png" id="1_3n8yg"]
+[ext_resource type="Script" path="res://scripts/progress_bar.gd" id="1_kw3tn"]
+[ext_resource type="Texture2D" uid="uid://bc05sbxrvl0qt" path="res://assets/textures/ui/circle.png" id="2_cu16e"]
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="3_mwse4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3jay"]
+font = ExtResource("3_mwse4")
+font_size = 24
+
+[node name="ProgressBarContainer" type="MarginContainer"]
+offset_right = 200.0
+offset_bottom = 20.0
+theme_override_constants/margin_left = 78
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_kw3tn")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("1_3n8yg")
+texture_progress = ExtResource("1_3n8yg")
+tint_progress = Color(0.0509804, 1, 0, 1)
+
+[node name="Label" type="Label" parent="ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = -32.0
+offset_right = 58.0
+offset_bottom = 3.0
+text = "Label"
+label_settings = SubResource("LabelSettings_v3jay")
+
+[node name="Icon" type="Sprite2D" parent="ProgressBar"]
+unique_name_in_owner = true
+position = Vector2(-35, -3)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_cu16e")

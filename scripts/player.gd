@@ -1,27 +1,35 @@
 class_name Player
 extends RigidBody2D
+# player controlled character
+
+
+@export var health: int = 100
 
 const MAX_VELOCITY = 150.0
 
 var thrust = 10.0
 
 var prevVel = Vector2.ZERO
-@onready var originalPos = position
+var originalPos: Vector2
 
-@onready var sprite = %Sprite2D
 var x_direction
 
+
 @export var net: PackedScene
-@export var light: ColorRect
 
 var net_reload_timer = 0.0;
 const NET_RELOAD_REF = 2.0;
 
+
+@onready var sprite = %Sprite2D
+
+
+func _ready():
+	originalPos = global_position
+
+
 func _process(delta):
 	net_reload_timer -= delta
-
-	light.material.set_shader_parameter("ar", get_viewport_rect().size.y / get_viewport_rect().size.x)
-	light.material.set_shader_parameter("position", Vector2.ONE / 2)
 
 	if x_direction == null:
 		return
@@ -75,5 +83,11 @@ func _integrate_forces( state ):
 				var p = (position - fish.position).normalized() * 1000.0
 				linear_velocity += p / 20
 				fish.propulse(-p / 5)
+				# take damage if colliding with fish?
+				take_damage(10)
 
 	prevVel = linear_velocity
+
+
+func take_damage(amount: int):
+	health -= amount

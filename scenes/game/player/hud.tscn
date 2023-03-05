@@ -1,9 +1,33 @@
-[gd_scene format=3 uid="uid://cuw1kmp2sncv5"]
+[gd_scene load_steps=6 format=3 uid="uid://c4kijmqp8bswt"]
 
-[node name="Hud" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+[ext_resource type="PackedScene" uid="uid://bloy0srw657ej" path="res://scenes/game/player/hud_elements/progress_ring.tscn" id="1_1obus"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_n4rms"]
+[ext_resource type="PackedScene" uid="uid://hc7id3dvabnq" path="res://scenes/game/player/hud_elements/flashlight.tscn" id="2_d03om"]
+[ext_resource type="PackedScene" uid="uid://dxasbedwsr5na" path="res://scenes/game/player/hud_elements/progress_bar.tscn" id="3_v38d1"]
+[ext_resource type="Texture2D" uid="uid://bc05sbxrvl0qt" path="res://assets/textures/ui/circle.png" id="5_m3go7"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_n4rms")
+
+[node name="Flashlight" parent="." instance=ExtResource("2_d03om")]
+
+[node name="Pressure" parent="." instance=ExtResource("1_1obus")]
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(240, 270)
+size_flags_horizontal = 0
+label_text = "Pressure"
+
+[node name="Health" parent="." instance=ExtResource("3_v38d1")]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -36.0
+offset_right = 224.0
+offset_bottom = 0.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, 84)
+label_text = "Health"
+image = ExtResource("5_m3go7")
+value = 100.0

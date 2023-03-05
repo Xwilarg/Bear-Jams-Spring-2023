@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bloy0srw657ej"]
+
+[ext_resource type="Script" path="res://scripts/progress_ring.gd" id="1_xl1my"]
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="2_dl6ih"]
+[ext_resource type="Texture2D" uid="uid://bjb6g8sx6etae" path="res://assets/textures/ui/ring.png" id="2_po046"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nii1b"]
+font = ExtResource("2_dl6ih")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_oays1"]
+font = ExtResource("2_dl6ih")
+
+[node name="ProgressRing" type="MarginContainer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -230.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(100, 115)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_xl1my")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+texture_under = ExtResource("2_po046")
+texture_progress = ExtResource("2_po046")
+tint_under = Color(0.145098, 0.145098, 0.145098, 1)
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = -33.0
+offset_right = 201.0
+offset_bottom = 2.0
+text = "Label"
+label_settings = SubResource("LabelSettings_nii1b")
+horizontal_alignment = 1
+
+[node name="ValueText" type="Label" parent="ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 87.0
+offset_right = 200.0
+offset_bottom = 112.0
+text = "0"
+label_settings = SubResource("LabelSettings_oays1")
+horizontal_alignment = 1
