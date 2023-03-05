@@ -17,5 +17,6 @@ func _process(delta):
 
 
 func _draw():
+	pass
 	#draw velocity
-	debug_hud.above_player.text = "velocity: " + str(player.velocity)
+	#debug_hud.above_player.text = "velocity: " + str(player.velocity)
