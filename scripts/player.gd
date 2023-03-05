@@ -95,7 +95,7 @@ func _integrate_forces( state ):
 				linear_velocity += p / 20
 				fish.propulse(-p / 5)
 				# take damage if colliding with fish?
-				take_damage(10)
+				take_damage(1)
 
 	prevVel = linear_velocity
 

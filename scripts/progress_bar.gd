@@ -4,10 +4,8 @@ extends MarginContainer
 
 
 @export var label_text: String
-@export var image: Texture
-@export var value: float
-@export var max_value: float = 100.0
 
+var value: float
 var player: Player
 
 @onready var progress_bar := %ProgressBar as TextureProgressBar
@@ -18,17 +16,13 @@ var player: Player
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	label.text = label_text
-	icon.texture = image
-	progress_bar.max_value = max_value
 
 
-
-	
 func _process(_delta):
 	# pressure = depth?
 	value = player.health
-	if value > max_value:
-		value = max_value
+	if value > progress_bar.max_value:
+		value = progress_bar.max_value
 	
 	if value != progress_bar.value:
 		queue_redraw()
