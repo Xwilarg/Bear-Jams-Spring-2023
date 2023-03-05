@@ -7,7 +7,7 @@ enum FishType {  }
 
 @export var Speed: float
 @export var MinDistance: int
-@export var MyBehavior: Behavior
+var MyBehavior: Behavior
 @onready var rayContainer = $"Rays"
 @onready var rays = $"Rays".get_children()
 
