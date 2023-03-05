@@ -98,14 +98,11 @@ position = Vector2(2001, 1810)
 [node name="Fish" parent="Fishes" instance=ExtResource("6_ggy3q")]
 position = Vector2(767, 19)
 collision_layer = 2
-lock_rotation = true
 
 [node name="Fish2" parent="Fishes" instance=ExtResource("6_ggy3q")]
 position = Vector2(-419, 1140)
 collision_layer = 2
-lock_rotation = true
 
 [node name="Fish3" parent="Fishes" instance=ExtResource("6_ggy3q")]
 position = Vector2(2721, 936)
 collision_layer = 2
-lock_rotation = true

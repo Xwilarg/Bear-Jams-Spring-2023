@@ -24,7 +24,7 @@ layer_0/tile_data = PackedInt32Array(1572864, 196609, 2, 1507328, 1, 4, 1441792,
 
 [node name="Player" parent="." instance=ExtResource("2_djwhq")]
 z_index = 10
-position = Vector2(1291, 173)
+position = Vector2(1300, 135)
 collision_layer = 4
 inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_24odd")
