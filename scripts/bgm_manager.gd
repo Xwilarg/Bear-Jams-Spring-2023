@@ -4,6 +4,8 @@ extends Node
 @export var bgm2: AudioStreamPlayer
 @export var bgm3: AudioStreamPlayer
 
+const MIN: float = 25.0
+
 func set_y(y):
 	if y < 300:
 		if !bgm1.playing:
@@ -16,8 +18,8 @@ func set_y(y):
 			bgm1.play()
 		if !bgm2.playing:
 			bgm2.play()
-		bgm1.volume_db = 50 - (y - 300.0) * 50.0 / 400.0 - 50.0
-		bgm2.volume_db = (y - 300.0) * 50.0 / 400.0 - 50.0
+		bgm1.volume_db = MIN - (y - 300.0) * MIN / 400.0 - MIN
+		bgm2.volume_db = (y - 300.0) * MIN / 400.0 - MIN
 		bgm3.stop()
 	elif y < 1800:
 		bgm1.stop()
@@ -31,8 +33,8 @@ func set_y(y):
 			bgm2.play()
 		if !bgm3.playing:
 			bgm3.play()
-		bgm2.volume_db = 50 - (y - 1800.0) * 50.0 / 400.0 - 50.0
-		bgm3.volume_db = (y - 1800.0) * 50.0 / 400.0 - 50.0
+		bgm2.volume_db = MIN - (y - 1800.0) * MIN / 400.0 - MIN
+		bgm3.volume_db = (y - 1800.0) * MIN / 400.0 - MIN
 		pass
 	else:
 		bgm1.stop()
