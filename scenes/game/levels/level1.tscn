@@ -9,6 +9,7 @@
 [ext_resource type="Shader" path="res://assets/shaders/FlashLight.gdshader" id="6_1xsb7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hiula"]
+friction = 0.0
 bounce = 1.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rvxk4"]

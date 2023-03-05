@@ -74,4 +74,4 @@ func collect():
 
 func _draw():
 	if next != null:
-		draw_line(to_local(position), to_local(last_player_pos if is_chasing else next.position), Color.RED, 3.0)
+		draw_line(position, last_player_pos if is_chasing else next.position, Color.RED, 3.0)
