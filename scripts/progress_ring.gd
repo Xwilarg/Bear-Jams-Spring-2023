@@ -7,15 +7,13 @@ extends MarginContainer
 
 var value: float
 var player: Player
-	
-@onready var label := %Label as Label
+
 @onready var progress_bar := %ProgressBar as TextureProgressBar
 @onready var value_text := %ValueText as Label
 
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
-	label.text = label_text
 	value_text.text = str(value)
 
 
