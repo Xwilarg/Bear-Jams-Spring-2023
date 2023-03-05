@@ -25,4 +25,4 @@ func _draw():
 	for line in LevelData:
 		var elems = line.split(',')
 		draw_line(get_node("AIMovNode" + elems[0]).position,
-		get_node("AIMovNode" + elems[1]).position, Color.GREEN, 3.0)
+		get_node("AIMovNode" + elems[1]).position, Color.GREEN, 10.0)
