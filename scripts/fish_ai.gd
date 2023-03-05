@@ -69,7 +69,7 @@ func get_hit():
 	set_collision_mask_value(3, true)
 
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body.name == "Player":
+	if body.name == "Player" and !can_move:
 		self.queue_free()
 
 
