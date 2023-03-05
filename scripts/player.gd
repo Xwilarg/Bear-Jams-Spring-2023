@@ -30,6 +30,7 @@ const NET_RELOAD_REF = 2.0;
 
 var broken = false
 
+@onready var brokenTexture = %BrokenSprite
 
 func _ready():
 	originalPos = global_position
@@ -126,7 +127,8 @@ func take_damage(amount: int):
 		return
 		
 	health -= amount
+	%InvincibleTimer.start()
 	if health == 0:
 		broken = true
-	
-	%InvincibleTimer.start()
+		brokenTexture.visible = true
+		sprite.visible = false
