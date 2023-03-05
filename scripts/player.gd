@@ -1,13 +1,13 @@
 class_name Player
 extends CharacterBody2D
-# submarine
-
 
 const GRAVITY = 50.0
 const DRAG = 10.0
 const MAX_VELOCITY = 150.0
 
 var thrust = 100.0
+
+var stun_time = 0.0
 
 @onready var sprite = %Sprite2D
 var x_direction
@@ -20,6 +20,7 @@ const NET_RELOAD_REF = 2.0;
 
 func _process(delta):
 	net_reload_timer -= delta
+	stun_time -= delta
 
 	light.material.set_shader_parameter("ar", get_viewport_rect().size.y / get_viewport_rect().size.x)
 	light.material.set_shader_parameter("position", Vector2.ONE / 2)
@@ -46,27 +47,28 @@ func _physics_process(delta):
 	# add gravity
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-	
-	# add thrust
-	var y_direction = Input.get_axis("move_up", "move_down")
-	if y_direction:
-		if (y_direction < 0 && velocity.y > 0) || (y_direction > 0 && velocity.y < 0):
-			y_direction *= 2
-		velocity.y += y_direction * thrust * delta
+
+	if stun_time <= 0.0:
+		# add thrust
+		var y_direction = Input.get_axis("move_up", "move_down")
+		if y_direction:
+			if (y_direction < 0 && velocity.y > 0) || (y_direction > 0 && velocity.y < 0):
+				y_direction *= 2
+			velocity.y += y_direction * thrust * delta
+			
+		else:
+			velocity.y = move_toward(velocity.y, 0, DRAG * delta)
 		
-	else:
-		velocity.y = move_toward(velocity.y, 0, DRAG * delta)
-	
-	x_direction = Input.get_axis("move_left", "move_right")
-	if x_direction:
-		if (x_direction < 0 && velocity.x > 0) || (x_direction > 0 && velocity.x < 0):
-			x_direction *= 2
-		velocity.x += x_direction * thrust * delta
-		
-	else:
-		velocity.x = move_toward(velocity.x, 0, DRAG * delta)
-	
+		x_direction = Input.get_axis("move_left", "move_right")
+		if x_direction:
+			if (x_direction < 0 && velocity.x > 0) || (x_direction > 0 && velocity.x < 0):
+				x_direction *= 2
+			velocity.x += x_direction * thrust * delta
+			
+		else:
+			velocity.x = move_toward(velocity.x, 0, DRAG * delta)
+
 	# clamp velocity
 	velocity = velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
-	
+
 	move_and_slide()
