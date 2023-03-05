@@ -5,8 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://bm6va3jiclha5" path="res://assets/audio/BGM2.mp3" id="2_7p4h8"]
 [ext_resource type="AudioStream" uid="uid://drh48yjyu1l6h" path="res://assets/audio/BGM3.mp3" id="3_2awtd"]
 
-[node name="bgm" type="Node"]
+[node name="bgm" type="Node" node_paths=PackedStringArray("bgm1", "bgm2", "bgm3")]
 script = ExtResource("1_ytdx7")
+bgm1 = NodePath("BGM1")
+bgm2 = NodePath("BGM2")
+bgm3 = NodePath("BGM3")
 
 [node name="BGM1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_jvba4")
