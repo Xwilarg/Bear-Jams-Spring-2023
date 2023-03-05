@@ -22,8 +22,7 @@ func _ready():
 
 
 func _process(_delta):
-	# pressure = depth?
-	value = ceilf(player.global_position.y * 0.1)
+	value = ceilf(player.pressure)
 	if value > max_value:
 		value = max_value
 	

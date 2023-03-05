@@ -3,7 +3,10 @@ extends RigidBody2D
 # player controlled character
 
 
+# values read by hud
 @export var health: int = 100
+var pressure: float
+
 
 const MAX_VELOCITY = 150.0
 
@@ -30,15 +33,15 @@ func _ready():
 
 func _process(delta):
 	net_reload_timer -= delta
-
+	
 	if x_direction == null:
 		return
-
+	
 	if sprite.flip_h and x_direction > 0:
 		sprite.flip_h = false
 	elif (not sprite.flip_h) and x_direction < 0:
 		sprite.flip_h = true
-
+	
 	if Input.is_action_just_pressed("fire") and net_reload_timer <= 0.0:
 		var go = net.instantiate()
 		get_parent().add_child(go)
@@ -47,10 +50,13 @@ func _process(delta):
 		(go as RigidBody2D).add_constant_central_force(Vector2(3 * x, -1).normalized() * 350)
 		(go.get_node("Sprite2D") as Sprite2D).flip_h = x
 		net_reload_timer = NET_RELOAD_REF
-
+	
 	if Input.is_action_just_pressed("reset"):
 		position = originalPos
 		linear_velocity = Vector2.ZERO
+	
+	# pressure = depth?
+	pressure = global_position.y * 0.1
 
 
 func _integrate_forces( state ):
