@@ -17,8 +17,6 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Rng="*res://scripts/rng.gd"
-
 [display]
 
 window/size/viewport_width=800

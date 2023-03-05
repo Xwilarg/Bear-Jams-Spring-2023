@@ -21,7 +21,7 @@ func getRandomNext(exclude: NextNode):
 	for i in range(0, Next.size()):
 		if Next[i] != excludeName:
 			indexArray.push_back(i)
-	return indexToNode(indexArray[(get_tree().root.get_node("Rng") as RNG).random(indexArray.size())])
+	return indexToNode(indexArray.pick_random())
 
 func _ready():
 	var me = name.right(name.length() - 9)
