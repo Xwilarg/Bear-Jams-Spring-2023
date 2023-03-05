@@ -6,3 +6,4 @@ func _on_player_entered(player: Player):
 		return
 	
 	%SoundPlayer.play()
+	self.disconnect("body_entered", _on_player_entered)
