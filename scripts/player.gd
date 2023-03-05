@@ -8,6 +8,7 @@ const MAX_VELOCITY = 150.0
 var thrust = 100.0
 
 var stun_time = 0.0
+var stun_dir: Vector2
 
 @onready var sprite = %Sprite2D
 var x_direction
@@ -67,8 +68,17 @@ func _physics_process(delta):
 			
 		else:
 			velocity.x = move_toward(velocity.x, 0, DRAG * delta)
+	else:
+		velocity = stun_dir * delta * 10000.0
 
 	# clamp velocity
 	velocity = velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
 
 	move_and_slide()
+	var coll = move_and_collide(velocity * delta, true)
+	if coll != null:
+		bump(coll.get_normal())
+
+func bump(normal: Vector2):
+	stun_time = 1.0
+	stun_dir = normal.normalized()
