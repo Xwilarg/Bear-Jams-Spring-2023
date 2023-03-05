@@ -27,8 +27,6 @@ var is_chasing = false
 
 var stun_timer = 0.0
 
-var target_index = 0
-
 func _process(delta):
 	if stun_timer > 0.0:
 		stun_timer -= delta
@@ -72,7 +70,7 @@ func _ready():
 		$"./Nautilus/Stunned" as Sprite2D,
 		$"./Ray/Stunned" as Sprite2D
 	]
-	normals[target_index].get_parent().visible = true
+	normals[FishType].get_parent().visible = true
 	lastNode = null
 
 	get_closest_node(global_position)
@@ -97,7 +95,7 @@ func _integrate_forces(state):
 			var tmp = lastNode
 			lastNode = next
 			next = next.getRandomNext(tmp)
-	normals[target_index].flip_h = linear_velocity.x > 0
+	normals[FishType].flip_h = linear_velocity.x > 0
 	var x_scale = 1 if linear_velocity.x > 0 else -1
 	(rayContainer as Node2D).scale = Vector2(x_scale, 1)
 
@@ -106,9 +104,9 @@ func get_hit():
 	linear_velocity = Vector2.ZERO
 	gravity_scale = 1.0
 	set_collision_mask_value(3, true)
-	normals[target_index].visible = false
-	stunned[target_index].visible = true
-	stunned[target_index].flip_h = normals[target_index].flip_h
+	normals[FishType].visible = false
+	stunned[FishType].visible = true
+	stunned[FishType].flip_h = normals[FishType].flip_h
 
 func can_collect():
 	return !can_move
