@@ -9,14 +9,14 @@ KEY_SPACEBAR;Space;Espace;
 KEY_FONT;Font by TheHungryJPEG;Police par TheHungryJPEG;
 KEY_INSTRUCTIONS;Stun and collect the fishes;Etourdi et recupere les poissons;
 KEY_RETRY;Press R to retry;Appuyez sur R pour reessayer;
-KEY_CAPTURE_1;I have you now
-KEY_CAPTURE_2;Thats another one for the tank
-KEY_CAPTURE_3;The big bucks keep swimming in
-KEY_CAPTURE_4;Our collection grows 
-KEY_CAPTURE_5;Perfect shot! 
-KEY_CAPTURE_6;Can’t keep swimming!
-KEY_CAPTURE_7;Reel ‘em in boys 
-KEY_CAPTURE_8;Hook, line & sinker
+KEY_CAPTURE_1;I have you now;Je t'ai maintenant
+KEY_CAPTURE_2;Thats another one for the tank;Et un autre pour la reserve
+KEY_CAPTURE_3;The big bucks keep swimming in;Les gros calibres continuent de nager
+KEY_CAPTURE_4;Our collection grows;Notre collection grandit
+KEY_CAPTURE_5;Perfect shot!;Tir parfait !
+KEY_CAPTURE_6;Can’t keep swimming!;On arrete de nager !
+KEY_CAPTURE_7;Reel ‘em in boys;Recuperez le les gars
+KEY_CAPTURE_8;Hook, line & sinker;Il est dans l'hamecon
 KEY_DAMAGE_1;Steady... Steady.....
 KEY_DAMAGE_2;Ok; just stay away from the walls… 
 KEY_DAMAGE_3;Thats tough coral 
