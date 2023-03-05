@@ -227,8 +227,58 @@ rotation = -0.29888
 
 [node name="Fishes" type="Node2D" parent="."]
 
-[node name="Fish" parent="Fishes" instance=ExtResource("6_it5j6")]
-position = Vector2(595, 281)
+[node name="Group D" type="Node" parent="Fishes"]
+
+[node name="Fish" parent="Fishes/Group D" instance=ExtResource("6_it5j6")]
+position = Vector2(-2884, 2287)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Fish2" parent="Fishes/Group D" instance=ExtResource("6_it5j6")]
+position = Vector2(-3658, 1916)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Group C" type="Node" parent="Fishes"]
+
+[node name="Fish3" parent="Fishes/Group C" instance=ExtResource("6_it5j6")]
+position = Vector2(-3370, 564)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Group B" type="Node" parent="Fishes"]
+
+[node name="Fish3" parent="Fishes/Group B" instance=ExtResource("6_it5j6")]
+position = Vector2(-1554, 232)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Group E" type="Node" parent="Fishes"]
+
+[node name="Fish3" parent="Fishes/Group E" instance=ExtResource("6_it5j6")]
+position = Vector2(693, 999)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Fish4" parent="Fishes/Group E" instance=ExtResource("6_it5j6")]
+position = Vector2(1001, 1536)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Fish5" parent="Fishes/Group E" instance=ExtResource("6_it5j6")]
+position = Vector2(1960, 895)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Group A" type="Node" parent="Fishes"]
+
+[node name="Fish3" parent="Fishes/Group A" instance=ExtResource("6_it5j6")]
+position = Vector2(-182, -1055)
+collision_layer = 2
+MyBehavior = 2
+
+[node name="Fish4" parent="Fishes/Group A" instance=ExtResource("6_it5j6")]
+position = Vector2(514, -1380)
 collision_layer = 2
 MyBehavior = 2
 
