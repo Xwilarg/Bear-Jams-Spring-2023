@@ -118,5 +118,4 @@ func propulse(dir: Vector2):
 	stun_timer = 2.0
 	linear_velocity += dir
 
-func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass # Wow yet another Godot bug, can't disconnect this method so it's staying here empty forever
+# nah
