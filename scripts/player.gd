@@ -38,14 +38,15 @@ func _ready():
 	originalPos = global_position
 
 func _process(delta):
+	if Input.is_action_just_pressed("reset"):
+		global_position = originalPos
+		linear_velocity = Vector2.ZERO
+		broken = false
+
 	if broken:
 		return
 	
 	net_reload_timer -= delta
-	
-	if Input.is_action_just_pressed("reset"):
-		global_position = originalPos
-		linear_velocity = Vector2.ZERO
 	
 	# pressure = depth?
 	pressure = (position.y + 900.0) * 100.0 / 4800.0

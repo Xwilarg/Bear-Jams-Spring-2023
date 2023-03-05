@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dylblfp7oift2"]
+[gd_scene load_steps=4 format=3 uid="uid://dylblfp7oift2"]
 
 [ext_resource type="AudioStream" uid="uid://bwdxok7dfup16" path="res://assets/audio/BGM.mp3" id="1_jvba4"]
+[ext_resource type="AudioStream" uid="uid://bm6va3jiclha5" path="res://assets/audio/BGM2.mp3" id="2_7p4h8"]
+[ext_resource type="AudioStream" uid="uid://drh48yjyu1l6h" path="res://assets/audio/BGM3.mp3" id="3_2awtd"]
 
 [node name="bgm" type="Node"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BGM1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_jvba4")
 autoplay = true
+
+[node name="BGM2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7p4h8")
+
+[node name="BGM3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2awtd")
