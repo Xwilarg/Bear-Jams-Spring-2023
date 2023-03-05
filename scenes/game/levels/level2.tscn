@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=11 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
@@ -9,10 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24odd"]
-friction = 0.0
-bounce = 1.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygwsk"]
 friction = 0.0
@@ -27,8 +23,7 @@ layer_0/tile_data = PackedInt32Array(1572864, 196609, 2, 1507328, 1, 4, 1441792,
 z_index = 10
 position = Vector2(1300, 135)
 collision_layer = 4
-inertia = 1.0
-physics_material_override = SubResource("PhysicsMaterial_24odd")
+health = 5
 net = ExtResource("3_2ku2e")
 
 [node name="AINodes" type="Node2D" parent="."]

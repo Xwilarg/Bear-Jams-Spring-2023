@@ -8,9 +8,11 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i4x3y"]
 friction = 0.0
 bounce = 1.0
+absorbent = true
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("shootAudioPlayer") groups=["player"]]
 collision_mask = 3
+inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_i4x3y")
 gravity_scale = 0.15
 continuous_cd = 1
