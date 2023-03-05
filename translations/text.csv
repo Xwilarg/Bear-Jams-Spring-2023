@@ -8,4 +8,24 @@ KEY_PROGRAMMING,Programming,Programmation,Development
 KEY_SPACEBAR,Space,Espace,
 KEY_FONT,Font by TheHungryJPEG,Police par TheHungryJPEG,
 KEY_INSTRUCTIONS,Stun and collect the fishes,Etourdi et recupere les poissons,
-KEY_RESTART,Press R to restart,Appuyez sur R pour reessayer
+KEY_CAPTURE_1,I have you now
+KEY_CAPTURE_2,Thats another one for the tank
+KEY_CAPTURE_3,The big bucks keep swimming in
+KEY_CAPTURE_4,Our collection grows 
+KEY_CAPTURE_5,Perfect shot! 
+KEY_CAPTURE_6,Can’t keep swimming!
+KEY_CAPTURE_7,Reel ‘em in boys 
+KEY_CAPTURE_8,Hook, line & sinker
+KEY_DAMAGE_1,Steady... Steady.....
+KEY_DAMAGE_2,Ok, just stay away from the walls… 
+KEY_DAMAGE_3,Thats tough coral 
+KEY_DAMAGE_4,What hit us!
+KEY_DAMAGE_5,I saw way more room on the sonar map
+KEY_DAMAGE_6,Just a little scratch!
+KEY_DAMAGE_7,Exterior breach!
+KEY_DAMAGE_8,Hull breach!
+KEY_START_TEXT_1, Captain Jones found a wealthy collector to sponsor our sub repairs. Now I'm obliged to scour these unknown depths in search of rare specimens for some snobby aristocrats fish tank..
+ Lets take it nice an easy, I don’t want to crack the sub like Ringo did last week. 
+KEY_START_TEXT_2, Woah! These currents are strong!
+KEY_ENDING_TEXT_1, This should be enough to keep Captain Jones happy. Once we transport these specimens to his collector will have enough cash to keep funding our [treasure hunt] for a while!
+I know [shipwrecked name] is down here, I can feel it in my bones... 
