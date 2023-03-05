@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfwikmx8qowwm"
-path="res://.godot/imported/cave_background3.png-8fd14d25ac5d9d1842a3f016d270a80b.ctex"
+uid="uid://ftgyauj83xb6"
+path="res://.godot/imported/health_bar_progress.PNG-2a98f5f7f7dae7984916a1c434b11abc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/backgrounds/cave_background3.png"
-dest_files=["res://.godot/imported/cave_background3.png-8fd14d25ac5d9d1842a3f016d270a80b.ctex"]
+source_file="res://assets/textures/ui/health_bar_progress.PNG"
+dest_files=["res://.godot/imported/health_bar_progress.PNG-2a98f5f7f7dae7984916a1c434b11abc.ctex"]
 
 [params]
 

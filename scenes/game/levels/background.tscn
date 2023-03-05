@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3gu115ki4jis"]
 
-[ext_resource type="Texture2D" uid="uid://cfwikmx8qowwm" path="res://assets/textures/backgrounds/cave_background3.png" id="1_w8ynm"]
+[ext_resource type="Texture2D" uid="uid://0p5bwfhjc47y" path="res://assets/textures/backgrounds/cave_background2.png" id="1_kenug"]
 
 [node name="Background" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 texture_repeat = 2
 motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(1024, 1024)
+motion_mirroring = Vector2(2048, 2048)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 texture_filter = 2
 scale = Vector2(2, 2)
-texture = ExtResource("1_w8ynm")
+texture = ExtResource("1_kenug")

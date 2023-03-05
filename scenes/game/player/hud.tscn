@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4kijmqp8bswt"]
+[gd_scene load_steps=9 format=3 uid="uid://c4kijmqp8bswt"]
 
 [ext_resource type="PackedScene" uid="uid://bloy0srw657ej" path="res://scenes/game/player/hud_elements/progress_ring.tscn" id="1_1obus"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_n4rms"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dxasbedwsr5na" path="res://scenes/game/player/hud_elements/progress_bar.tscn" id="3_v38d1"]
 [ext_resource type="Texture2D" uid="uid://c0ucp86fwy2pb" path="res://assets/textures/ui/gauge_back.PNG" id="4_e07kx"]
 [ext_resource type="Texture2D" uid="uid://cpax8f6liqj7v" path="res://assets/textures/ui/gauge_progress.PNG" id="5_3x84u"]
-[ext_resource type="Texture2D" uid="uid://do2thx4hoe7ig" path="res://assets/textures/ui/heart_bar.PNG" id="8_terc1"]
+[ext_resource type="Texture2D" uid="uid://6wug105uoaoj" path="res://assets/textures/ui/health_bar_back.PNG" id="7_rwtvm"]
+[ext_resource type="Texture2D" uid="uid://ftgyauj83xb6" path="res://assets/textures/ui/health_bar_progress.PNG" id="8_cf4jo"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_n4rms")
@@ -55,10 +56,9 @@ label_text = "Health"
 [node name="ProgressBar" parent="Health" index="0"]
 max_value = 5.0
 value = 3.0
-texture_under = ExtResource("8_terc1")
-texture_progress = ExtResource("8_terc1")
-tint_under = Color(0.670588, 0.670588, 0.670588, 1)
-tint_progress = Color(0.992157, 0.937255, 0.0745098, 1)
+texture_under = ExtResource("7_rwtvm")
+texture_progress = ExtResource("8_cf4jo")
+tint_progress = Color(1, 1, 1, 1)
 
 [node name="Label" parent="Health/ProgressBar" index="0"]
 visible = false
