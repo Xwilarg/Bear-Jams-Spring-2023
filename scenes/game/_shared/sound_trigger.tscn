@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3as5dckne6y"]
+
+[ext_resource type="Script" path="res://scripts/sound_trigger.gd" id="1_ouocc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jtsk"]
+radius = 100.0
+
+[node name="SoundTrigger" type="Area2D"]
+input_pickable = false
+monitorable = false
+script = ExtResource("1_ouocc")
+
+[node name="TriggerShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5jtsk")
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]
