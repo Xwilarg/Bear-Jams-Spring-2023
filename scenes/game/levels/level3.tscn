@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj1mdouqyhpkv"]
 
-[ext_resource type="TileSet" uid="uid://d1o2dtlsq2i3x" path="res://scenes/game/levels/tilesets/cave.tres" id="1_aeb4w"]
+[ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_aeb4w"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_ggwse"]
 [ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="3_xa23x"]
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_sexbo"]
@@ -24,10 +24,6 @@ collision_layer = 4
 inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_24odd")
 gravity_scale = 0.1
-continuous_cd = 1
-max_contacts_reported = 10
-contact_monitor = true
-lock_rotation = true
 net = ExtResource("3_xa23x")
 
 [node name="AINodes" type="Node2D" parent="."]
@@ -103,16 +99,13 @@ position = Vector2(2001, 1810)
 position = Vector2(767, 19)
 collision_layer = 2
 lock_rotation = true
-MyBehavior = null
 
 [node name="Fish2" parent="Fishes" instance=ExtResource("6_ggy3q")]
 position = Vector2(-419, 1140)
 collision_layer = 2
 lock_rotation = true
-MyBehavior = null
 
 [node name="Fish3" parent="Fishes" instance=ExtResource("6_ggy3q")]
 position = Vector2(2721, 936)
 collision_layer = 2
 lock_rotation = true
-MyBehavior = null
