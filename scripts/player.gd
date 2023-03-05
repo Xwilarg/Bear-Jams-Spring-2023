@@ -123,7 +123,11 @@ func _integrate_forces( state ):
 
 
 func take_damage(amount: int):
+	if not %InvincibleTimer.is_stopped():
+		return
+		
 	health -= amount
+	%InvincibleTimer.start()
 	if health == 0:
 		broken = true
 		brokenTexture.visible = true
