@@ -12,13 +12,16 @@ enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
 
 var next: NextNode
 var lastNode: NextNode
-var sr: Array[Sprite2D]
+var normals: Array[Sprite2D]
+var stunned: Array[Sprite2D]
 
 var can_move: bool = true
 var last_player_pos: Vector2
 var is_chasing = false
 
 var stun_timer = 0.0
+
+var target_index = 0
 
 func _process(delta):
 	if stun_timer > 0.0:
@@ -49,8 +52,11 @@ func get_closest_node(pos: Vector2):
 	next = targetNodes[0]
 
 func _ready():
-	sr = [
-		$"./CuttleFish/Sprite2D" as Sprite2D
+	normals = [
+		$"./CuttleFish/Normal" as Sprite2D
+	]
+	stunned = [
+		$"./CuttleFish/Stunned" as Sprite2D
 	]
 	lastNode = null
 
@@ -78,14 +84,16 @@ func _integrate_forces(state):
 			var tmp = lastNode
 			lastNode = next
 			next = next.getRandomNext(tmp)
-	for e in sr:
-		e.flip_h = linear_velocity.x > 0
+	normals[target_index].flip_h = linear_velocity.x > 0
 
 func get_hit():
 	can_move = false
 	linear_velocity = Vector2.ZERO
 	gravity_scale = 1.0
 	set_collision_mask_value(3, true)
+	normals[target_index].visible = false
+	stunned[target_index].visible = true
+	stunned[target_index].flip_h = normals[target_index].flip_h
 
 func can_collect():
 	return !can_move
