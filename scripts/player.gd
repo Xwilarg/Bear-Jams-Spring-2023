@@ -27,6 +27,8 @@ const NET_RELOAD_REF = 2.0;
 
 @onready var sprite = %Sprite2D
 @export var shootAudioPlayer: AudioStreamPlayer2D
+@export var collisionAudioPlayer: AudioStreamPlayer2D
+@export var damageAudioPlayer: AudioStreamPlayer2D
 
 var broken = false
 
@@ -109,6 +111,7 @@ func _integrate_forces( state ):
 
 	if(state.get_contact_count() >= 1):
 		if state.get_contact_collider_object(0).name.begins_with("Fish"):
+			damageAudioPlayer.play()
 			var fish = (state.get_contact_collider_object(0) as Fish)
 			if fish.can_collect():
 				fish.queue_free()
@@ -118,6 +121,8 @@ func _integrate_forces( state ):
 				fish.propulse(-p / 5)
 				# take damage if colliding with fish?
 				take_damage(1)
+		else:
+			collisionAudioPlayer.play()
 
 	prevVel = linear_velocity
 
