@@ -75,9 +75,8 @@ func get_hit():
 	gravity_scale = 1.0
 	set_collision_mask_value(3, true)
 
-func collect():
-	if !can_move:
-		self.queue_free()
+func can_collect():
+	return !can_move
 
 func propulse(dir: Vector2):
 	stun_timer = 2.0
