@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjluyjxh1b0ab"]
+[gd_scene load_steps=16 format=3 uid="uid://bjluyjxh1b0ab"]
 
 [ext_resource type="Texture2D" uid="uid://bdom24jr43n8r" path="res://assets/textures/backgrounds/start_layer4.PNG" id="1_8r62y"]
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_p0x54"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b24g66f28flcd" path="res://assets/textures/backgrounds/start_layer2.PNG" id="3_8ml8s"]
 [ext_resource type="Texture2D" uid="uid://cidksqjdwaegs" path="res://assets/textures/backgrounds/start_layer1.PNG" id="4_5ewgy"]
 [ext_resource type="Shader" path="res://scenes/game/_shared/scroll_texture.gdshader" id="5_yb2u6"]
-[ext_resource type="Texture2D" uid="uid://dydrsko602upq" path="res://assets/textures/ui/play.PNG" id="7_web8m"]
+[ext_resource type="Texture2D" uid="uid://bvt73t8g7vauh" path="res://assets/textures/ui/IMG_0994.PNG" id="7_pdspq"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_2h83x"]
+[ext_resource type="Texture2D" uid="uid://dtj1ndres6hs1" path="res://assets/textures/ui/IMG_1072.PNG" id="9_xkg4h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_melku"]
 shader = ExtResource("5_yb2u6")
@@ -33,10 +34,11 @@ shader_parameter/speed = 0.08
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m10k7"]
 
-[node name="StartScreen" type="Control"]
+[node name="StartScreen" type="Control" node_paths=PackedStringArray("credits")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_p0x54")
+credits = NodePath("CanvasLayer/Credits")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -83,7 +85,7 @@ theme_override_colors/icon_pressed_color = Color(0.517647, 0.517647, 0.517647, 1
 theme_override_colors/icon_hover_color = Color(0.709804, 0.709804, 0.709804, 1)
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_62t62")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m10k7")
-icon = ExtResource("7_web8m")
+icon = ExtResource("7_pdspq")
 flat = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Button"]
@@ -99,4 +101,73 @@ text = "KEY_PLAY"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="Button2" type="Button" parent="CanvasLayer"]
+texture_filter = 6
+offset_left = 115.0
+offset_top = 415.0
+offset_right = 635.0
+offset_bottom = 935.0
+scale = Vector2(0.304341, 0.24523)
+theme_override_colors/icon_pressed_color = Color(0.517647, 0.517647, 0.517647, 1)
+theme_override_colors/icon_hover_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_62t62")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m10k7")
+icon = ExtResource("9_xkg4h")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Button2"]
+layout_mode = 0
+offset_left = 62.43
+offset_top = 179.423
+offset_right = 521.43
+offset_bottom = 314.423
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_2h83x")
+theme_override_font_sizes/font_size = 100
+text = "KEY_CREDITS"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Credits" type="Panel" parent="CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(300, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -37.5
+offset_right = 47.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_2h83x")
+text = "KEY_CREDITS
+
+BLABLABLA"
+
+[node name="Button" type="Button" parent="CanvasLayer/Credits"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "X"
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits/Button" to="." method="_on_credits_x_pressed"]
