@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj1mdouqyhpkv"]
+[gd_scene load_steps=8 format=3 uid="uid://bj1mdouqyhpkv"]
 
 [ext_resource type="TileSet" uid="uid://d1o2dtlsq2i3x" path="res://scenes/game/levels/tilesets/cave.tres" id="1_aeb4w"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_ggwse"]
@@ -6,20 +6,10 @@
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_sexbo"]
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="5_omec2"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="6_ggy3q"]
-[ext_resource type="Shader" path="res://scenes/game/player/hud_elements/flashlight.gdshader" id="7_vtnya"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24odd"]
 friction = 0.0
 bounce = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ymri"]
-shader = ExtResource("7_vtnya")
-shader_parameter/position = null
-shader_parameter/arc = 0.75
-shader_parameter/color = Color(0.305, 0.298, 0.341, 1)
-shader_parameter/max_darkness = 0.99
-shader_parameter/start = 0.02
-shader_parameter/end = 0.25
 
 [node name="Level3" type="TileMap"]
 position = Vector2(-872, -920)
@@ -123,15 +113,3 @@ lock_rotation = true
 position = Vector2(2721, 936)
 collision_layer = 2
 lock_rotation = true
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="ShaderRect" type="ColorRect" parent="HUD"]
-material = SubResource("ShaderMaterial_8ymri")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
