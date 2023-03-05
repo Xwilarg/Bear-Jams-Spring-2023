@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=9 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://dqiwe4t1ra3f2" path="res://scenes/game/levels/tilesets/new_tile_set.tres" id="1_6lad6"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_llrij"]
 [ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="3_b0yje"]
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="4_3ek6l"]
+[ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_jhdc0"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="5_2wutn"]
 [ext_resource type="Shader" path="res://assets/shaders/FlashLight.gdshader" id="6_7x3sc"]
 
@@ -29,6 +30,8 @@ net = ExtResource("3_b0yje")
 light = NodePath("../HUD/ShaderRect")
 
 [node name="AINodes" type="Node2D" parent="."]
+script = ExtResource("4_jhdc0")
+LevelData = Array[String](["4,5", "5,6", "6,7", "7,8", "8,9", "9,10", "10,11", "11,12", "11,12", "12,13"])
 
 [node name="AIMovNode4" parent="AINodes" instance=ExtResource("4_3ek6l")]
 position = Vector2(-388, 1056)
