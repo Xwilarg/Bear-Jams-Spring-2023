@@ -31,6 +31,18 @@ flip_h = true
 target_position = Vector2(200, -45)
 collision_mask = 4
 
+[node name="RayTop4" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -112.5)
+collision_mask = 4
+
+[node name="RayTop5" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -135)
+collision_mask = 4
+
+[node name="RayTop6" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, -157.5)
+collision_mask = 4
+
 [node name="RayTop2" type="RayCast2D" parent="Rays"]
 target_position = Vector2(200, -67.5)
 collision_mask = 4
@@ -49,6 +61,18 @@ collision_mask = 4
 
 [node name="RayBottom3" type="RayCast2D" parent="Rays"]
 target_position = Vector2(200, 90)
+collision_mask = 4
+
+[node name="RayBottom4" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 112.5)
+collision_mask = 4
+
+[node name="RayBottom5" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 135)
+collision_mask = 4
+
+[node name="225" type="RayCast2D" parent="Rays"]
+target_position = Vector2(200, 157.5)
 collision_mask = 4
 
 [node name="RayUp" type="RayCast2D" parent="Rays"]
