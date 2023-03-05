@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvgolfpkf4b5"]
+
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="1_yaqk1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdeg0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="TextBox" type="CanvasLayer"]
+
+[node name="BoxMargin" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -145.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 20
+
+[node name="Box" type="Panel" parent="BoxMargin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cdeg0")
+
+[node name="TextMargin" type="MarginContainer" parent="BoxMargin/Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Text" type="RichTextLabel" parent="BoxMargin/Box/TextMargin"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_yaqk1")
+bbcode_enabled = true
+text = "Captain Jones found a wealthy collector to sponsor our sub repairs. Now Im obliged to scour these unknown depths in search of rare specimens for some snobby aristocrats fish tank.."
+scroll_active = false
