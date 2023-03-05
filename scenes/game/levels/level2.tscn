@@ -48,5 +48,6 @@ offset_left = 1166.0
 offset_top = 49.0
 offset_right = 1337.0
 offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.921569, 0.921569, 0.286275, 1)
 
 [node name="Background" parent="." instance=ExtResource("9_bcw6o")]
