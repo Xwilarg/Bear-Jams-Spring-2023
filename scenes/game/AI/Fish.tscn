@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsqommrhh77n4"]
+[gd_scene load_steps=12 format=3 uid="uid://dsqommrhh77n4"]
 
 [ext_resource type="Script" path="res://scripts/fish_ai.gd" id="1_p5ffc"]
 [ext_resource type="Texture2D" uid="uid://lqfm8sqnl82f" path="res://assets/textures/sprites/fishes/cuttlefish/IMG_1074.PNG" id="2_m86bq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bmtdefayoi7np" path="res://assets/textures/sprites/fishes/nautilus/IMG_1119.PNG" id="7_n4ywk"]
 [ext_resource type="Texture2D" uid="uid://hdo6daevt33m" path="res://assets/textures/sprites/fishes/ray/IMG_1085.PNG" id="8_52e6p"]
 [ext_resource type="Texture2D" uid="uid://bp0c1cxcvwlet" path="res://assets/textures/sprites/fishes/ray/IMG_1122.PNG" id="9_adimf"]
+[ext_resource type="Texture2D" uid="uid://ds23k727s2wu0" path="res://assets/textures/sprites/fishes/sea anemone/IMG_1083.PNG" id="10_vki4i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qpk5y"]
 friction = 0.0
@@ -29,7 +30,6 @@ MinDistance = 20
 
 [node name="CuttleFish" type="CollisionPolygon2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(3, -12, -7, -13, -17, -7, -21, -10, -22, -6, -21, -3, -15, -1, -9, 5, -6, 7, -3, 7, 3, 6, 6, 5, 16, 11, 13, 14, 17, 18, 22, 14, 21, 5, 12, -9)
 
 [node name="Normal" type="Sprite2D" parent="CuttleFish"]
@@ -44,7 +44,6 @@ flip_h = true
 
 [node name="Isopod" type="CollisionPolygon2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-20, -15, -14, -7, 2, -16, 1, -13, 8, -11, 12, -7, 16, 2, 21, 6, 18, 8, 13, 6, 11, 7, 11, 10, 4, 12, -7, 14, -9, 8, -17, 12, -17, 7, -11, 4, -16, -3, -15, -6)
 
 [node name="Normal" type="Sprite2D" parent="Isopod"]
@@ -59,7 +58,6 @@ flip_h = true
 
 [node name="Nautilus" type="CollisionPolygon2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-15, -7, -10, -8, -1, -14, 11, -17, 18, -14, 23, -8, 24, -1, 22, 7, 18, 12, 11, 15, 2, 16, -6, 15, -11, 11, -19, 8, -25, 7, -24, 2, -22, -1)
 
 [node name="Normal" type="Sprite2D" parent="Nautilus"]
@@ -74,7 +72,6 @@ flip_h = true
 
 [node name="Ray" type="CollisionPolygon2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(11, -9, 9, -4, 16, 0, 19, -1, 22, -3, 23, -1, 22, 5, 17, 10, 12, 11, 4, 9, -1, 9, -9, 10, -12, 8, -16, 5, -22, 5, -23, 3, -23, 0, -20, -4, -14, -5, -10, -5, -6, -3, 1, -6, 5, -6, 7, -5)
 
 [node name="Normal" type="Sprite2D" parent="Ray"]
@@ -85,6 +82,20 @@ texture = ExtResource("8_52e6p")
 visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("9_adimf")
+flip_h = true
+
+[node name="Anemone" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-2, -17, 3, -16, 12, -14, 18, -13, 22, -6, 21, 0, 14, 2, 15, 8, 19, 13, 17, 15, 8, 15, -3, 13, -6, 16, -13, 16, -17, 14, -20, 11, -20, 7, -18, 4, -19, 3, -20, -2, -17, -6, -16, -10, -10, -10, -6, -11)
+
+[node name="Normal" type="Sprite2D" parent="Anemone"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_vki4i")
+
+[node name="Stunned" type="Sprite2D" parent="Anemone"]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_vki4i")
 flip_h = true
 
 [node name="Rays" type="Node2D" parent="."]
