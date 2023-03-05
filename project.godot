@@ -67,7 +67,7 @@ reset={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/text.en.translation", "res://translations/text.fr.translation", "res://translations/text.tr.translation")
+locale/translations=PackedStringArray("res://translations/text.en.translation", "res://translations/text.fr.translation", "res://translations/text.tr.translation", "res://translations/text.de.translation")
 
 [layer_names]
 

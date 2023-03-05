@@ -43,3 +43,6 @@ func _on_fr_pressed():
 	
 func _on_tr_pressed():
 	TranslationServer.set_locale("tr")
+
+func _on_de_pressed():
+	TranslationServer.set_locale("de")

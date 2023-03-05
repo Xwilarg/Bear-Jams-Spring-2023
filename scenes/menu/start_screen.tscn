@@ -118,8 +118,8 @@ texture_filter = 6
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 43.0
-offset_right = 307.0
+offset_left = -86.0
+offset_right = 178.0
 offset_bottom = 264.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
@@ -149,8 +149,8 @@ texture_filter = 6
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 164.0
-offset_right = 428.0
+offset_left = 35.0
+offset_right = 299.0
 offset_bottom = 264.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
@@ -171,6 +171,37 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_2h83x")
 theme_override_font_sizes/font_size = 100
 text = "FR"
+label_settings = SubResource("LabelSettings_5uktv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DE" type="Button" parent="CanvasLayer"]
+texture_filter = 6
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 154.0
+offset_right = 418.0
+offset_bottom = 264.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/icon_pressed_color = Color(0.517647, 0.517647, 0.517647, 1)
+theme_override_colors/icon_hover_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_62t62")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m10k7")
+icon = ExtResource("9_jsvm8")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/DE"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 66.0
+offset_right = 195.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_2h83x")
+theme_override_font_sizes/font_size = 100
+text = "DE"
 label_settings = SubResource("LabelSettings_5uktv")
 horizontal_alignment = 1
 uppercase = true
@@ -359,6 +390,7 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/EN" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="CanvasLayer/FR" to="." method="_on_fr_pressed"]
+[connection signal="pressed" from="CanvasLayer/DE" to="." method="_on_de_pressed"]
 [connection signal="pressed" from="CanvasLayer/TR" to="." method="_on_tr_pressed"]
 [connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Credits/Button" to="." method="_on_credits_x_pressed"]
