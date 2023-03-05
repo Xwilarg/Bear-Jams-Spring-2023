@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://56wkijgaxl1d"]
+[gd_scene load_steps=25 format=3 uid="uid://56wkijgaxl1d"]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_h8t2h"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_djwhq"]
@@ -8,8 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_rbtqu"]
-[ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
-[ext_resource type="PackedScene" uid="uid://dylblfp7oift2" path="res://scenes/game/bgm.tscn" id="10_1yds0"]
+[ext_resource type="PackedScene" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+[ext_resource type="PackedScene" path="res://scenes/game/_shared/sound_trigger.tscn" id="10_m0lkr"]
+[ext_resource type="AudioStream" uid="uid://33gitpwbcltd" path="res://assets/audio/All/nautilus_sfx.mp3" id="11_q5gjc"]
+[ext_resource type="AudioStream" uid="uid://c1fb573rvprtk" path="res://assets/audio/All/cuttlefish_sfx.mp3" id="11_vgx6w"]
+[ext_resource type="Texture2D" uid="uid://c0crnfy4g2n7t" path="res://assets/textures/sprites/decorations/IMG_1130.PNG" id="12_7nr8j"]
+[ext_resource type="Texture2D" uid="uid://bfsqdet8e5b5c" path="res://assets/textures/sprites/decorations/IMG_1132.PNG" id="13_4ecm8"]
+[ext_resource type="AudioStream" uid="uid://bbyq857r1db6k" path="res://assets/audio/All/isopod_sfx.mp3" id="13_i6ie1"]
+[ext_resource type="Texture2D" uid="uid://4k7mef67gp05" path="res://assets/textures/sprites/decorations/IMG_1142.PNG" id="14_jqex6"]
+[ext_resource type="AudioStream" uid="uid://bkmiyir3ir2yr" path="res://assets/audio/All/ghost_shark_sfx.mp3" id="14_ppvvh"]
+[ext_resource type="Texture2D" uid="uid://bophqamy2cpov" path="res://assets/textures/sprites/decorations/IMG_1143.PNG" id="15_06lg6"]
+[ext_resource type="AudioStream" uid="uid://22s8xyxbd4p5" path="res://assets/audio/All/anenome_sfx.mp3" id="15_de8g2"]
+[ext_resource type="Texture2D" uid="uid://bsr1rsol3n1gw" path="res://assets/textures/sprites/decorations/IMG_1144.PNG" id="16_cdm1x"]
+[ext_resource type="Texture2D" uid="uid://c3inujlfm4ni5" path="res://assets/textures/sprites/decorations/IMG_1145.PNG" id="17_2vup0"]
+[ext_resource type="Texture2D" uid="uid://b4unii0nrftlo" path="res://assets/textures/sprites/decorations/IMG_1146.PNG" id="18_sxk8o"]
+[ext_resource type="Texture2D" uid="uid://b4q507lhxo007" path="res://assets/textures/sprites/decorations/IMG_1147.PNG" id="19_ydv16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g24dn"]
 size = Vector2(1253, 75)
@@ -23,8 +36,11 @@ layer_0/tile_data = PackedInt32Array(1572864, 196609, 2, 1507328, 1, 4, 1441792,
 [node name="Player" parent="." instance=ExtResource("2_djwhq")]
 z_index = 10
 position = Vector2(852, -442)
-collision_layer = 4
+collision_layer = 5
 health = 5
+
+[node name="CollisionPolygon2D" parent="Player" index="7"]
+light_mask = 5
 
 [node name="AINodes" type="Node2D" parent="."]
 script = ExtResource("4_i4kde")
@@ -120,14 +136,16 @@ rotation = -0.29888
 [node name="Group D" type="Node" parent="Fishes"]
 
 [node name="FishD1" parent="Fishes/Group D" instance=ExtResource("6_it5j6")]
-position = Vector2(-2884, 2287)
+position = Vector2(-3099, 2281)
 collision_layer = 2
+Type = 1
 
 [node name="Group C" type="Node" parent="Fishes"]
 
 [node name="FishC1" parent="Fishes/Group C" instance=ExtResource("6_it5j6")]
 position = Vector2(1749, -21)
 collision_layer = 2
+Type = 4
 
 [node name="Group B" type="Node" parent="Fishes"]
 
@@ -140,12 +158,14 @@ collision_layer = 2
 [node name="FishE1" parent="Fishes/Group E" instance=ExtResource("6_it5j6")]
 position = Vector2(693, 999)
 collision_layer = 2
+Type = 3
 
 [node name="Group A" type="Node" parent="Fishes"]
 
 [node name="FishA1" parent="Fishes/Group A" instance=ExtResource("6_it5j6")]
 position = Vector2(-182, -1055)
 collision_layer = 2
+Type = 2
 
 [node name="KeyBinding" parent="." instance=ExtResource("7_rtwdd")]
 position = Vector2(848, -480)
@@ -168,9 +188,386 @@ shape = SubResource("RectangleShape2D_g24dn")
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1340, 2010)
 
-[node name="bgm" parent="." instance=ExtResource("10_1yds0")]
+[node name="SoundTrigger" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(710, 74)
+
+[node name="SoundPlayer" parent="SoundTrigger" index="1"]
+stream = ExtResource("11_q5gjc")
+
+[node name="SoundTrigger2" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(136, 1155)
+
+[node name="SoundPlayer" parent="SoundTrigger2" index="1"]
+stream = ExtResource("11_vgx6w")
+
+[node name="SoundTrigger3" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(-2046, 3254)
+
+[node name="TriggerShape" parent="SoundTrigger3" index="0"]
+position = Vector2(-9, -6)
+
+[node name="SoundPlayer" parent="SoundTrigger3" index="1"]
+stream = ExtResource("13_i6ie1")
+
+[node name="SoundTrigger4" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(2789, 1869)
+
+[node name="TriggerShape" parent="SoundTrigger4" index="0"]
+position = Vector2(-9, -6)
+
+[node name="SoundPlayer" parent="SoundTrigger4" index="1"]
+stream = ExtResource("14_ppvvh")
+
+[node name="SoundTrigger5" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(1568, 2166)
+
+[node name="TriggerShape" parent="SoundTrigger5" index="0"]
+position = Vector2(-9, -6)
+
+[node name="SoundPlayer" parent="SoundTrigger5" index="1"]
+stream = ExtResource("14_ppvvh")
+
+[node name="SoundTrigger6" parent="." instance=ExtResource("10_m0lkr")]
+position = Vector2(2890, 861)
+
+[node name="TriggerShape" parent="SoundTrigger6" index="0"]
+position = Vector2(-9, -6)
+
+[node name="SoundPlayer" parent="SoundTrigger6" index="1"]
+stream = ExtResource("15_de8g2")
+
+[node name="Jelly00" type="Sprite2D" parent="."]
+position = Vector2(546, 1153)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_7nr8j")
+
+[node name="Jelly01" type="Sprite2D" parent="."]
+position = Vector2(832, 1863)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_7nr8j")
+
+[node name="Jelly02" type="Sprite2D" parent="."]
+position = Vector2(1224, 2717)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_7nr8j")
+
+[node name="Jelly03" type="Sprite2D" parent="."]
+position = Vector2(3754, 2295)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_7nr8j")
+
+[node name="Bubble00" type="Sprite2D" parent="."]
+position = Vector2(1399, -154)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_4ecm8")
+
+[node name="Bubble01" type="Sprite2D" parent="."]
+position = Vector2(3519, 958)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_4ecm8")
+
+[node name="Bubble02" type="Sprite2D" parent="."]
+position = Vector2(877, 2864)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_4ecm8")
+
+[node name="Bubble03" type="Sprite2D" parent="."]
+position = Vector2(-2895, 1684)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_4ecm8")
+
+[node name="FıshSchool00" type="Sprite2D" parent="."]
+position = Vector2(-1813, 920)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_jqex6")
+
+[node name="FıshSchool01" type="Sprite2D" parent="."]
+position = Vector2(-3213, 3476)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_jqex6")
+
+[node name="FıshSchool02" type="Sprite2D" parent="."]
+position = Vector2(2421, 2984)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_jqex6")
+
+[node name="Starz00" type="Sprite2D" parent="."]
+position = Vector2(374, 508)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_06lg6")
+
+[node name="Starz01" type="Sprite2D" parent="."]
+position = Vector2(1114, -126)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_06lg6")
+
+[node name="Starz02" type="Sprite2D" parent="."]
+position = Vector2(1780, 1372)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_06lg6")
+
+[node name="Starz03" type="Sprite2D" parent="."]
+position = Vector2(268, 2080)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_06lg6")
+
+[node name="Starz04" type="Sprite2D" parent="."]
+position = Vector2(-1284, 1764)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_06lg6")
+
+[node name="AlgeaA00" type="Sprite2D" parent="."]
+position = Vector2(-443, 1387)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA01" type="Sprite2D" parent="."]
+position = Vector2(-847, 433)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA02" type="Sprite2D" parent="."]
+position = Vector2(-1747, 1998)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA03" type="Sprite2D" parent="."]
+position = Vector2(-2701, 3828)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA04" type="Sprite2D" parent="."]
+position = Vector2(-2060, 3371)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA05" type="Sprite2D" parent="."]
+position = Vector2(-1536, 3073)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA06" type="Sprite2D" parent="."]
+position = Vector2(1071, 1237)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA07" type="Sprite2D" parent="."]
+position = Vector2(2542, 594)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA08" type="Sprite2D" parent="."]
+position = Vector2(1367, 433)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA09" type="Sprite2D" parent="."]
+position = Vector2(1049, 110)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA10" type="Sprite2D" parent="."]
+position = Vector2(1223, -520)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA11" type="Sprite2D" parent="."]
+position = Vector2(417, -465)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA12" type="Sprite2D" parent="."]
+position = Vector2(3229, 1646)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA13" type="Sprite2D" parent="."]
+position = Vector2(3838, 2931)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA14" type="Sprite2D" parent="."]
+position = Vector2(3719, 2930)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA15" type="Sprite2D" parent="."]
+position = Vector2(3584, 2963)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA16" type="Sprite2D" parent="."]
+position = Vector2(3447, 2963)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA17" type="Sprite2D" parent="."]
+position = Vector2(3311, 2962)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA18" type="Sprite2D" parent="."]
+position = Vector2(3181, 2964)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaA19" type="Sprite2D" parent="."]
+position = Vector2(3069, 2932)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_cdm1x")
+
+[node name="AlgeaB00" type="Sprite2D" parent="."]
+position = Vector2(133, 1486)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB01" type="Sprite2D" parent="."]
+position = Vector2(-454, 2759)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB02" type="Sprite2D" parent="."]
+position = Vector2(-1081, 2086)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB03" type="Sprite2D" parent="."]
+position = Vector2(-1628, 2668)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB04" type="Sprite2D" parent="."]
+position = Vector2(-3024, 3469)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB05" type="Sprite2D" parent="."]
+position = Vector2(-2929, 1996)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB06" type="Sprite2D" parent="."]
+position = Vector2(1040, 3083)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB07" type="Sprite2D" parent="."]
+position = Vector2(3143, 2419)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaB08" type="Sprite2D" parent="."]
+position = Vector2(2910, 1003)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2vup0")
+
+[node name="AlgeaC00" type="Sprite2D" parent="."]
+position = Vector2(-615, 721)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC01" type="Sprite2D" parent="."]
+position = Vector2(-1808, 1711)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC02" type="Sprite2D" parent="."]
+position = Vector2(-3049, 2517)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC03" type="Sprite2D" parent="."]
+position = Vector2(-2350, 2840)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC04" type="Sprite2D" parent="."]
+position = Vector2(-1218, 2805)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC05" type="Sprite2D" parent="."]
+position = Vector2(-1117, 3350)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC06" type="Sprite2D" parent="."]
+position = Vector2(-575, 2616)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC07" type="Sprite2D" parent="."]
+position = Vector2(754, 1623)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC08" type="Sprite2D" parent="."]
+position = Vector2(759, 718)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC09" type="Sprite2D" parent="."]
+position = Vector2(1966, 2806)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaC10" type="Sprite2D" parent="."]
+position = Vector2(3394, 1976)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_sxk8o")
+
+[node name="AlgeaD00" type="Sprite2D" parent="."]
+position = Vector2(252, 1339)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD01" type="Sprite2D" parent="."]
+position = Vector2(-778, 1787)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD02" type="Sprite2D" parent="."]
+position = Vector2(-2503, 2133)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD03" type="Sprite2D" parent="."]
+position = Vector2(-2362, 3833)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD04" type="Sprite2D" parent="."]
+position = Vector2(-1710, 3639)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD05" type="Sprite2D" parent="."]
+position = Vector2(-78, 2837)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD06" type="Sprite2D" parent="."]
+position = Vector2(11, 2335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD07" type="Sprite2D" parent="."]
+position = Vector2(2399, 1986)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
+
+[node name="AlgeaD08" type="Sprite2D" parent="."]
+position = Vector2(1982, 629)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_ydv16")
 
 [editable path="Player"]
 [editable path="Player/Hud"]
 [editable path="Player/Hud/Pressure"]
 [editable path="Player/Hud/Health"]
+[editable path="SoundTrigger"]
+[editable path="SoundTrigger2"]
+[editable path="SoundTrigger3"]
+[editable path="SoundTrigger4"]
+[editable path="SoundTrigger5"]
+[editable path="SoundTrigger6"]
