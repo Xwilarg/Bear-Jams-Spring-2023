@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ckenuufwf5kqt" path="res://scenes/game/tutorial/key_binding.tscn" id="7_rtwdd"]
 [ext_resource type="PackedScene" uid="uid://dcmmsqfp8xq20" path="res://scenes/game/tutorial/instructions.tscn" id="8_iijcu"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_rbtqu"]
-[ext_resource type="PackedScene" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
-[ext_resource type="PackedScene" path="res://scenes/game/_shared/sound_trigger.tscn" id="10_m0lkr"]
+[ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="9_bcw6o"]
+[ext_resource type="PackedScene" uid="uid://dq3as5dckne6y" path="res://scenes/game/_shared/sound_trigger.tscn" id="10_m0lkr"]
 [ext_resource type="AudioStream" uid="uid://c1fb573rvprtk" path="res://assets/audio/All/cuttlefish_sfx.mp3" id="11_vgx6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g24dn"]
@@ -24,7 +24,7 @@ layer_0/tile_data = PackedInt32Array(1572864, 196609, 2, 1507328, 1, 4, 1441792,
 [node name="Player" parent="." instance=ExtResource("2_djwhq")]
 z_index = 10
 position = Vector2(852, -442)
-collision_layer = 4
+collision_layer = 5
 health = 5
 
 [node name="AINodes" type="Node2D" parent="."]
