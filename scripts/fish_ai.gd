@@ -73,7 +73,7 @@ func _integrate_forces(state):
 		var tmp = lastNode
 		lastNode = next
 		next = next.getRandomNext(tmp)
-	sr.flip_h = linear_velocity.x < 0
+	sr.flip_h = linear_velocity.x > 0
 
 func get_hit():
 	can_move = false

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcmmsqfp8xq20"]
+
+[ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="1_1syo8"]
+
+[node name="Instructions" type="Label"]
+custom_minimum_size = Vector2(0, 75)
+offset_left = 618.0
+offset_top = 97.0
+offset_right = 789.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.921569, 0.921569, 0.286275, 1)
+theme_override_fonts/font = ExtResource("1_1syo8")
+theme_override_font_sizes/font_size = 20
+text = "KEY_INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
