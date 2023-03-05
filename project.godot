@@ -17,8 +17,6 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Bgm="*res://scenes/game/bgm.tscn"
-
 [display]
 
 window/size/viewport_width=800

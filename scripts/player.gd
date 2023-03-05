@@ -37,7 +37,7 @@ func _ready():
 	originalPos = global_position
 
 func _process(delta):
-	Bgm.set_y(position.y)
+	($"../bgm" as BGM_Manager).set_y(position.y)
 
 	if Input.is_action_just_pressed("reset"):
 		global_position = originalPos
