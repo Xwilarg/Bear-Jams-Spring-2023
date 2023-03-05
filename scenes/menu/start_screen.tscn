@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjluyjxh1b0ab"]
+[gd_scene load_steps=20 format=3 uid="uid://bjluyjxh1b0ab"]
 
 [ext_resource type="Texture2D" uid="uid://bdom24jr43n8r" path="res://assets/textures/backgrounds/start_layer4.PNG" id="1_8r62y"]
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_p0x54"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="8_2h83x"]
 [ext_resource type="Texture2D" uid="uid://bis6s7bw2s1nq" path="res://assets/textures/ui/Shell.PNG" id="9_jsvm8"]
 [ext_resource type="Texture2D" uid="uid://dtj1ndres6hs1" path="res://assets/textures/ui/IMG_1072.PNG" id="9_xkg4h"]
+[ext_resource type="AudioStream" uid="uid://bqwd7qfpfwrj0" path="res://assets/audio/title_screen.mp3" id="11_rch8i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_melku"]
 shader = ExtResource("5_yb2u6")
@@ -350,6 +351,10 @@ theme_override_fonts/font = ExtResource("8_2h83x")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_2h83x")
 text = "KEY_FONT"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rch8i")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/EN" to="." method="_on_en_pressed"]
