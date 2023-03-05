@@ -4,7 +4,7 @@ extends RigidBody2D
 
 
 # values read by hud
-@export var health: int = 100
+@export var health: int = 3
 var pressure: float
 
 
