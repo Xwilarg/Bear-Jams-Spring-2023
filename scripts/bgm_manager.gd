@@ -1,5 +1,7 @@
 extends Node
 
+class_name BGM_Manager
+
 @export var bgm1: AudioStreamPlayer
 @export var bgm2: AudioStreamPlayer
 @export var bgm3: AudioStreamPlayer
