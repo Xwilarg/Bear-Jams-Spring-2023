@@ -72,8 +72,8 @@ func _integrate_forces( state ):
 			if fish.can_collect():
 				fish.queue_free()
 			else:
-				var p = (position - state.get_contact_local_position(0)).normalized() * 1000.0
-				linear_velocity += p
-				fish.propulse(-p / 20)
+				var p = (position - fish.position).normalized() * 1000.0
+				linear_velocity += p / 20
+				fish.propulse(-p / 5)
 
 	prevVel = linear_velocity

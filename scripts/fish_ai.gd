@@ -86,6 +86,5 @@ func _draw():
 	if next != null:
 		draw_line(to_local(position), last_player_pos if is_chasing else to_local(next.position), Color.RED, 3.0)
 
-
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	pass # Wow yet another Godot bug, can't disconnect this method so it's staying here empty forever
