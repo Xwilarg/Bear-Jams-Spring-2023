@@ -8,7 +8,8 @@ class_name BGM_Manager
 
 const MIN: float = 25.0
 
-func set_y(y):
+func _process(_delta):
+	var y = $"../Player".position.y
 	if y < 300:
 		if !bgm1.playing:
 			bgm1.play()
