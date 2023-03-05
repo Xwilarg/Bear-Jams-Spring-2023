@@ -12,10 +12,6 @@ var _time: float = 0
 @onready var credits := %Credits as Panel
 
 
-func _ready():
-	TranslationServer.set_locale("en") # Use to debug languages
-
-
 func _physics_process(delta):
 	# move right
 	credits_button.position.x += 1
@@ -38,3 +34,12 @@ func _on_credits_pressed():
 
 func _on_credits_x_pressed():
 	credits.visible = false
+
+func _on_en_pressed():
+	TranslationServer.set_locale("en")
+	
+func _on_fr_pressed():
+	TranslationServer.set_locale("fr")
+	
+func _on_tr_pressed():
+	TranslationServer.set_locale("tr")
