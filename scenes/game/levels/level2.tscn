@@ -27,7 +27,7 @@ health = 5
 
 [node name="AINodes" type="Node2D" parent="."]
 script = ExtResource("4_i4kde")
-LevelData = Array[String](["A1,A2", "A2,A3", "A3,A4", "A4,A5", "A5,A6", "A6,A1", "A1,A4", "A1,A5", "A1,A3", "A2,A4", "A2,A5", "A2,A6", "A3,A5", "A3,A6", "A4,A6"])
+LevelData = Array[String](["A1,A2", "A2,A3", "A3,A4", "A4,A5", "A5,A6", "A6,A1", "A1,A4", "A1,A5", "A1,A3", "A2,A4", "A2,A5", "A2,A6", "A3,A5", "A3,A6", "A4,A6", "B1,B2", "B2,B3", "B3,B4", "B3,B5", "B4,B6", "B5,B6", "B6,B7", "B6,B8"])
 
 [node name="AIMovNodeA1" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(1447, -439)
@@ -46,6 +46,30 @@ position = Vector2(886, -617)
 
 [node name="AIMovNodeA6" parent="AINodes" instance=ExtResource("5_0r0a7")]
 position = Vector2(711, -207)
+
+[node name="AIMovNodeB1" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(626, 763)
+
+[node name="AIMovNodeB2" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(438, 1082)
+
+[node name="AIMovNodeB3" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(29, 1070)
+
+[node name="AIMovNodeB4" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-344, 816)
+
+[node name="AIMovNodeB5" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-156, 1220)
+
+[node name="AIMovNodeB6" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-589, 1194)
+
+[node name="AIMovNodeB7" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-927, 1241)
+
+[node name="AIMovNodeB8" parent="AINodes" instance=ExtResource("5_0r0a7")]
+position = Vector2(-870, 939)
 
 [node name="Fishes" type="Node2D" parent="."]
 
