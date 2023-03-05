@@ -26,6 +26,12 @@ layer_0/tile_data = PackedInt32Array(1572864, 1048577, 4, 1507328, 327681, 2, 14
 z_index = 10
 position = Vector2(745, 196)
 collision_layer = 4
+inertia = 1.0
+gravity_scale = 0.1
+continuous_cd = 2
+max_contacts_reported = 10
+contact_monitor = true
+lock_rotation = true
 net = ExtResource("3_b0yje")
 light = NodePath("../HUD/ShaderRect")
 

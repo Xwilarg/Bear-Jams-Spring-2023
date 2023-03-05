@@ -1,11 +1,9 @@
 class_name Player
-extends CharacterBody2D
+extends RigidBody2D
 
-const GRAVITY = 50.0
-const DRAG = 10.0
 const MAX_VELOCITY = 150.0
 
-var thrust = 100.0
+var thrust = 10.0
 
 var stun_time = 0.0
 var stun_dir: Vector2
@@ -44,10 +42,8 @@ func _process(delta):
 		net_reload_timer = NET_RELOAD_REF
 
 
-func _physics_process(delta):
-	# add gravity
-	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+func _integrate_forces( state ):
+	var velocity = Vector2.ZERO
 
 	if stun_time <= 0.0:
 		# add thrust
@@ -55,30 +51,25 @@ func _physics_process(delta):
 		if y_direction:
 			if (y_direction < 0 && velocity.y > 0) || (y_direction > 0 && velocity.y < 0):
 				y_direction *= 2
-			velocity.y += y_direction * thrust * delta
-			
-		else:
-			velocity.y = move_toward(velocity.y, 0, DRAG * delta)
+			velocity.y += y_direction * thrust
 		
 		x_direction = Input.get_axis("move_left", "move_right")
 		if x_direction:
 			if (x_direction < 0 && velocity.x > 0) || (x_direction > 0 && velocity.x < 0):
 				x_direction *= 2
-			velocity.x += x_direction * thrust * delta
-			
-		else:
-			velocity.x = move_toward(velocity.x, 0, DRAG * delta)
+			velocity.x += x_direction * thrust
 	else:
-		velocity = stun_dir * delta * 10000.0
+		velocity = stun_dir * 1000.0
 
+	linear_velocity += velocity
+	
 	# clamp velocity
-	velocity = velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
-
-	move_and_slide()
-	var coll = move_and_collide(velocity * delta, true)
-	if coll != null:
-		bump(coll.get_normal())
-
-func bump(normal: Vector2):
-	stun_time = 1.0
-	stun_dir = normal.normalized()
+	linear_velocity = linear_velocity.clamp(Vector2(-MAX_VELOCITY, -MAX_VELOCITY), Vector2(MAX_VELOCITY, MAX_VELOCITY))
+	
+	if(state.get_contact_count() >= 1):
+		if state.get_contact_collider_object(0).name == "Fish":
+			(state.get_contact_collider_object(0) as Fish).collect()
+			stun_dir = (position - state.get_contact_local_position(0)).normalized()
+		else:
+			stun_dir = -linear_velocity
+		stun_time = 1.0
