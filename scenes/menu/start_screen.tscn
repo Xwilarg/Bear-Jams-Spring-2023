@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjluyjxh1b0ab"]
+[gd_scene load_steps=18 format=3 uid="uid://bjluyjxh1b0ab"]
 
 [ext_resource type="Texture2D" uid="uid://bdom24jr43n8r" path="res://assets/textures/backgrounds/start_layer4.PNG" id="1_8r62y"]
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_p0x54"]
@@ -34,10 +34,15 @@ shader_parameter/speed = 0.08
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m10k7"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_5uktv"]
+font = ExtResource("8_2h83x")
+font_size = 100
+font_color = Color(0.101961, 0.196078, 0.34902, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_cil8f"]
 font = ExtResource("8_2h83x")
 font_size = 70
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.176471, 0.376471, 0.490196, 1)
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -102,6 +107,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_2h83x")
 theme_override_font_sizes/font_size = 100
 text = "KEY_PLAY"
+label_settings = SubResource("LabelSettings_5uktv")
 horizontal_alignment = 1
 uppercase = true
 
