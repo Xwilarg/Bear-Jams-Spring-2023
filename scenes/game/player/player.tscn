@@ -18,7 +18,6 @@ max_contacts_reported = 10
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_fdpge")
-health = 5
 shootAudioPlayer = NodePath("ShootAudioPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -4,7 +4,7 @@ extends Control
 @export var swim_frequency: float = 2.0
 @export var swim_amplitude: float = 50.0
 
-var level1 = preload("res://scenes/game/levels/level1.tscn")
+var level1 = preload("res://scenes/game/levels/level2.tscn")
 
 var _time: float = 0
 
