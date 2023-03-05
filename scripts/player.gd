@@ -122,7 +122,8 @@ func _integrate_forces( state ):
 				linear_velocity += p / 20
 				fish.propulse(-p / 5)
 				# take damage if colliding with fish?
-				take_damage(1)
+				if fish.does_damage():
+					take_damage(1)
 		else:
 			collisionAudioPlayer.play()
 

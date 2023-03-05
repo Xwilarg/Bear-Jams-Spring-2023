@@ -3,7 +3,12 @@ extends RigidBody2D
 class_name Fish
 
 enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
-enum FishType {  }
+enum FishType { CUTTLEFISH, ISOPOD, NAUTILUS, RAY, ANEMONE  }
+
+var doesDamage = [ false, false, false, true, false ]
+var behaviorList = [ Behavior.BEHAV_CHASE, Behavior.BEHAV_IDLE, Behavior.BEHAV_PATROL, Behavior.BEHAV_CHASE, Behavior.BEHAV_IDLE ]
+
+@export var Type: FishType
 
 @export var Speed: float
 @export var MinDistance: int
@@ -53,6 +58,8 @@ func get_closest_node(pos: Vector2):
 	next = targetNodes[0]
 
 func _ready():
+	MyBehavior = behaviorList[Type]
+
 	normals = [
 		$"./CuttleFish/Normal" as Sprite2D,
 		$"./Isopod/Normal" as Sprite2D,
@@ -105,6 +112,9 @@ func get_hit():
 
 func can_collect():
 	return !can_move
+
+func does_damage():
+	return doesDamage[Type]
 
 func propulse(dir: Vector2):
 	stun_timer = 2.0
