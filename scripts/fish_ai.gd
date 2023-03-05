@@ -12,7 +12,7 @@ enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
 
 var next: NextNode
 var lastNode: NextNode
-var sr: Sprite2D
+var sr: Array[Sprite2D]
 
 var can_move: bool = true
 var last_player_pos: Vector2
@@ -49,7 +49,9 @@ func get_closest_node(pos: Vector2):
 	next = targetNodes[0]
 
 func _ready():
-	sr = $"./Sprite2D"
+	sr = [
+		$"./CuttleFish/Sprite2D" as Sprite2D
+	]
 	lastNode = null
 
 	get_closest_node(position)
@@ -76,7 +78,8 @@ func _integrate_forces(state):
 			var tmp = lastNode
 			lastNode = next
 			next = next.getRandomNext(tmp)
-	sr.flip_h = linear_velocity.x > 0
+	for e in sr:
+		e.flip_h = linear_velocity.x > 0
 
 func get_hit():
 	can_move = false
